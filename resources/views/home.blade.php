@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Zerta — Hire Senior Remote Developers')
-@section('description', 'Find and hire experienced remote developers — for staff augmentation, dedicated teams, or full project outsourcing. Matched to your stack in days, not months.')
-@section('keywords', 'hire remote developers, staff augmentation, dedicated development teams, software outsourcing, remote engineers, PHP, React, Laravel, Node.js')
+@section('title', 'Zerta — Software Outsourcing & Dedicated Engineering Teams')
+@section('description', 'Zerta delivers end-to-end software projects and embeds senior engineers into your team. From MVP to full-scale products — scoped, built, and shipped on time.')
+@section('keywords', 'software outsourcing, project delivery, dedicated development teams, staff augmentation, remote engineers, MVP development, PHP, React, Laravel, Node.js')
 
 @section('content')
 
@@ -19,17 +19,17 @@
 
             {{-- Text --}}
             <div class="pb-16 lg:pb-24">
-                <p class="hero-line text-sm font-semibold tracking-wide mb-5" style="color:#8dc63f;">Remote engineering — without the headache</p>
+                <p class="hero-line text-sm font-semibold tracking-wide mb-5" style="color:#8dc63f;">Software outsourcing — done right</p>
 
                 <h1 id="hero-heading" class="text-5xl sm:text-6xl font-black text-slate-900 leading-[1.06] tracking-tight mb-6">
-                    <span class="hero-line block">Good engineers</span>
-                    <span class="hero-line block">are hard to find.</span>
-                    <span class="hero-line block text-slate-400">We've already</span>
-                    <span class="hero-line block text-slate-400">found them.</span>
+                    <span class="hero-line block">We build your</span>
+                    <span class="hero-line block">product.</span>
+                    <span class="hero-line block text-slate-400">You keep</span>
+                    <span class="hero-line block text-slate-400">the focus.</span>
                 </h1>
 
                 <p class="hero-line text-lg text-slate-500 leading-relaxed mb-10 max-w-md">
-                    Zerta places senior, battle-tested developers into your team — in days. Whether you need one specialist or a full squad, we handle the search, vetting, and matching.
+                    Zerta delivers end-to-end software projects and embeds senior engineers into your team — scoped clearly, built in sprints, and shipped on time.
                 </p>
 
                 <div class="flex flex-wrap gap-3">
@@ -37,32 +37,32 @@
                         href="#contact"
                         class="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-lg transition-colors duration-150 text-sm bg-[#150958] hover:bg-[#0e0640]"
                     >
-                        Schedule a free call
+                        Start a project
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
                     <a
-                        href="#services"
+                        href="#contact"
                         class="inline-flex items-center gap-2 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold px-7 py-3.5 rounded-lg transition-colors duration-150 text-sm"
                     >
-                        See how it works
+                        Hire developers
                     </a>
                 </div>
 
                 {{-- Social proof strip --}}
                 <div class="flex flex-wrap gap-x-8 gap-y-4 mt-12 pt-10 border-t border-slate-100">
                     <div class="reveal">
-                        <span class="block text-2xl font-black text-slate-900">500+</span>
-                        <span class="text-xs text-slate-400 font-medium">Companies served</span>
+                        <span class="block text-2xl font-black text-slate-900">350+</span>
+                        <span class="text-xs text-slate-400 font-medium">Projects delivered</span>
                     </div>
                     <div class="reveal" data-delay="200">
-                        <span class="block text-2xl font-black text-slate-900">72 hrs</span>
-                        <span class="text-xs text-slate-400 font-medium">Average first match</span>
+                        <span class="block text-2xl font-black text-slate-900">98%</span>
+                        <span class="text-xs text-slate-400 font-medium">On-time delivery rate</span>
                     </div>
                     <div class="reveal" data-delay="400">
-                        <span class="block text-2xl font-black text-slate-900">94%</span>
-                        <span class="text-xs text-slate-400 font-medium">Long-term retention rate</span>
+                        <span class="block text-2xl font-black text-slate-900">200+</span>
+                        <span class="text-xs text-slate-400 font-medium">Clients worldwide</span>
                     </div>
                 </div>
             </div>
@@ -198,10 +198,10 @@
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.08] rounded-2xl overflow-hidden" data-stats-section>
             @php
             $numbers = [
-                ['stat' => '5,000+', 'label' => 'Engineers in our network', 'note' => 'Across 40+ countries'],
-                ['stat' => '72 hrs', 'label' => 'Median time to first match', 'note' => 'Faster than any recruiter'],
-                ['stat' => '94%',    'label' => 'Retention after 12 months', 'note' => 'Industry avg is 68%'],
-                ['stat' => '11 yrs', 'label' => 'In business', 'note' => 'Profitable from year one'],
+                ['stat' => '350+',  'label' => 'Projects delivered',        'note' => 'Across 30+ industries'],
+                ['stat' => '98%',   'label' => 'On-time delivery rate',      'note' => 'Industry avg is 71%'],
+                ['stat' => '200+',  'label' => 'Clients worldwide',          'note' => 'From startups to enterprise'],
+                ['stat' => '11 yrs','label' => 'In business',                'note' => 'Profitable from year one'],
             ];
             @endphp
             @foreach ($numbers as $n)
@@ -224,7 +224,7 @@
         <div class="max-w-xl mb-16">
             <p class="reveal text-sm font-semibold tracking-wide mb-4" style="color:#8dc63f;">How it works</p>
             <h2 id="process-heading" class="reveal text-4xl font-black text-slate-900 leading-tight tracking-tight" data-delay="100">
-                From brief to boarded in four steps
+                From brief to launch in four steps
             </h2>
         </div>
 
@@ -232,19 +232,19 @@
         $steps = [
             [
                 'label' => 'Discovery call',
-                'desc'  => 'A 30-minute conversation. We ask about your stack, your team, and the kind of engineer you actually need — not just a job spec.',
+                'desc'  => 'A focused 30-minute session where we learn your product goals, technical landscape, timeline, and success criteria — no generic intake forms.',
             ],
             [
-                'label' => 'Candidate shortlist',
-                'desc'  => 'Within 24–48 hours we send you three to five profiles. Each includes a technical summary, relevant projects, and our honest assessment.',
+                'label' => 'Scope & proposal',
+                'desc'  => 'Within 48 hours we deliver a clear project scope, milestone plan, and transparent fixed-price or T&M quote. No hidden fees, no vague estimates.',
             ],
             [
-                'label' => 'You interview, you decide',
-                'desc'  => "Interview as many candidates as you like. If none are right, we go back and search again. You don't pay until you hire.",
+                'label' => 'Build & iterate',
+                'desc'  => 'Our team works in two-week sprints with live demos after each cycle. You have full visibility into progress, blockers, and what ships next.',
             ],
             [
-                'label' => 'Onboard and start shipping',
-                'desc'  => 'Once you\'ve chosen, we handle contracts and time-zone coordination. Most developers are productive within the first week.',
+                'label' => 'Launch & support',
+                'desc'  => 'We deploy to production, run QA, and hand over full documentation. Post-launch support is included — because shipping is only half the job.',
             ],
         ];
         @endphp
@@ -397,28 +397,28 @@
 
             <div class="reveal">
                 <h2 id="cta-heading" class="text-4xl sm:text-5xl font-black text-white leading-tight tracking-tight mb-5">
-                    Ready to hire?<br>Let's talk.
+                    Ready to ship?<br>Let's scope it.
                 </h2>
                 <p class="reveal text-slate-300 text-lg leading-relaxed max-w-md" data-delay="150">
-                    Book a free 30-minute call. No sales pitch — just a conversation about what you need and whether we're the right fit.
+                    Book a free 30-minute discovery call. We'll map out your project and give you a clear scope and budget — no obligation.
                 </p>
             </div>
 
-            <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 lg:justify-end">
+            <div class="reveal flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 lg:justify-end" data-delay="200">
                 <a
-                    href="mailto:hello@zerta.io"
+                    href="{{ route('contact') }}"
                     class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-slate-50 font-bold px-8 py-4 rounded-xl transition-colors duration-150 text-sm"
                 >
-                    Book a call
+                    Start a project
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
                 </a>
                 <a
-                    href="#services"
+                    href="#contact"
                     class="inline-flex items-center justify-center border-2 border-white/30 hover:border-white/60 text-white font-bold px-8 py-4 rounded-xl transition-colors duration-150 text-sm"
                 >
-                    View services
+                    Hire developers
                 </a>
             </div>
 

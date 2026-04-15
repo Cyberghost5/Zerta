@@ -16,7 +16,7 @@
 
             <div>
                 <h2 class="text-xl font-bold text-slate-900 mb-3">1. Who we are</h2>
-                <p>Zerta Inc. ("Zerta", "we", "our", or "us") operates the website at zerta.io and related services. We are the data controller for personal data collected through our website and services. Contact us at <a href="mailto:privacy@zerta.io" class="font-medium hover:underline" style="color:#150958;">privacy@zerta.io</a>.</p>
+                <p>Zerta Inc. ("Zerta", "we", "our", or "us") operates the website at zertahq.com and related services. We are the data controller for personal data collected through our website and services. Contact us at <a href="mailto:info@zertahq.com" class="font-medium hover:underline" style="color:#150958;">info@zertahq.com</a>.</p>
             </div>
 
             <div>
@@ -53,7 +53,7 @@
 
             <div>
                 <h2 class="text-xl font-bold text-slate-900 mb-3">7. Your rights</h2>
-                <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or restrict processing of your personal data, and to data portability. To exercise any right, email <a href="mailto:privacy@zerta.io" class="font-medium hover:underline" style="color:#150958;">privacy@zerta.io</a>. We will respond within 30 days.</p>
+                <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or restrict processing of your personal data, and to data portability. To exercise any right, email <a href="mailto:info@zertahq.com" class="font-medium hover:underline" style="color:#150958;">info@zertahq.com</a>. We will respond within 30 days.</p>
             </div>
 
             <div>

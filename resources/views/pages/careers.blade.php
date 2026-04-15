@@ -334,7 +334,7 @@
                 </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-4 lg:justify-end">
-                <a href="mailto:zertahq@gmail.com?subject=Open Application"
+                <a href="mailto:info@zertahq.com?subject=Open Application"
                     class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-50 transition-colors duration-150 text-sm">
                     Send an open application
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>

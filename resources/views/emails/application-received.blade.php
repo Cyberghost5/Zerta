@@ -40,7 +40,7 @@
         </div>
     </div>
     <div style="padding:16px 32px;background:#f8fafc;border-top:1px solid #e2e8f0;text-align:center;">
-        <p style="margin:0;font-size:11px;color:#94a3b8;">Zerta Technology · zertahq@gmail.com</p>
+        <p style="margin:0;font-size:11px;color:#94a3b8;">Zerta Technology · info@zertahq.com</p>
     </div>
 </div>
 </body>

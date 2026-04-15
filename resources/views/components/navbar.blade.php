@@ -17,19 +17,14 @@
             {{-- Desktop Navigation --}}
             <div class="hidden lg:flex items-center gap-0.5">
 
-                {{-- Services --}}
-                <a href="{{ route('home') }}#services"
-                   class="nav-link px-4 py-2 rounded-lg text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 font-medium transition-all duration-150"
-                >Services</a>
-
-                {{-- Solutions dropdown --}}
+                {{-- Services dropdown --}}
                 <div class="relative" x-data @click.outside="solutions = false">
                     <button
                         @click="solutions = !solutions"
                         :aria-expanded="solutions.toString()"
                         class="nav-link inline-flex items-center gap-1 px-4 py-2 rounded-lg text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 font-medium transition-all duration-150"
                     >
-                        Solutions
+                        Services
                         <svg :class="solutions ? 'rotate-180' : ''"
                              class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"
                              fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -139,16 +134,13 @@
         >
             <div class="flex flex-col gap-0.5">
 
-                <a @click="open = false" href="{{ route('home') }}#services"
-                   class="px-3 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm font-medium transition-colors">Services</a>
-
                 {{-- Solutions accordion for mobile --}}
                 <div x-data="{ mSolutions: false }">
                     <button
                         @click="mSolutions = !mSolutions"
                         class="w-full flex items-center justify-between px-3 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm font-medium transition-colors"
                     >
-                        Solutions
+                        Services
                         <svg :class="mSolutions ? 'rotate-180' : ''"
                              class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"
                              fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

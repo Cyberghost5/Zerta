@@ -88,22 +88,6 @@
 </section>
 
 {{-- ============================================================
-     TRUSTED BY
-============================================================ --}}
-<section id="trusted-by" aria-label="Companies that trust Zerta" class="border-y border-slate-100 bg-white py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12">
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest shrink-0">Used by teams at</p>
-            <div class="flex flex-wrap items-center gap-x-8 gap-y-3">
-                @foreach (['Shopify', 'Stripe', 'HubSpot', 'Atlassian', 'Twilio', 'Salesforce', 'Slack'] as $brand)
-                <span class="text-base font-bold text-slate-300 hover:text-slate-500 transition-colors duration-200 cursor-default select-none">{{ $brand }}</span>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- ============================================================
      SERVICES
 ============================================================ --}}
 <section id="services" aria-labelledby="services-heading" class="bg-white py-24 lg:py-32">
@@ -201,7 +185,7 @@
                 ['stat' => '350+',  'label' => 'Projects delivered',        'note' => 'Across 30+ industries'],
                 ['stat' => '98%',   'label' => 'On-time delivery rate',      'note' => 'Industry avg is 71%'],
                 ['stat' => '200+',  'label' => 'Clients worldwide',          'note' => 'From startups to enterprise'],
-                ['stat' => '11 yrs','label' => 'In business',                'note' => 'Profitable from year one'],
+                ['stat' => '5 yrs','label' => 'In business',                'note' => 'Profitable from year one'],
             ];
             @endphp
             @foreach ($numbers as $n)

@@ -16,7 +16,7 @@
             </h1>
             <p class="text-lg text-slate-500 leading-relaxed">
                 Fill in the form and we'll get back to you within one business day. For urgent matters email us directly at
-                <a href="mailto:zertahq@gmail.com" class="font-semibold text-slate-700 hover:underline" style="color:#150958;">zertahq@gmail.com</a>.
+                <a href="mailto:info@zertahq.com" class="font-semibold text-slate-700 hover:underline" style="color:#150958;">info@zertahq.com</a>.
             </p>
         </div>
     </div>
@@ -130,7 +130,7 @@
                             <svg class="w-4 h-4 shrink-0" style="color:#8dc63f;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            <a href="mailto:zertahq@gmail.com" class="hover:text-slate-900 transition-colors">zertahq@gmail.com</a>
+                            <a href="mailto:info@zertahq.com" class="hover:text-slate-900 transition-colors">info@zertahq.com</a>
                         </li>
                         <li class="flex items-center gap-3">
                             <svg class="w-4 h-4 shrink-0" style="color:#8dc63f;" fill="none" stroke="currentColor" viewBox="0 0 24 24">

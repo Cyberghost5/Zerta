@@ -16,7 +16,7 @@
 
             <div>
                 <h2 class="text-xl font-bold text-slate-900 mb-3">1. Acceptance</h2>
-                <p>By accessing or using the zerta.io website or any Zerta services, you agree to be bound by these Terms of Service. If you do not agree, do not use our services.</p>
+                <p>By accessing or using the zertahq.com website or any Zerta services, you agree to be bound by these Terms of Service. If you do not agree, do not use our services.</p>
             </div>
 
             <div>
@@ -26,7 +26,7 @@
 
             <div>
                 <h2 class="text-xl font-bold text-slate-900 mb-3">3. Account and access</h2>
-                <p>You are responsible for maintaining the confidentiality of any login credentials associated with your account and for all activity that occurs under your account. Notify us immediately of any unauthorised use at <a href="mailto:security@zerta.io" class="font-medium hover:underline" style="color:#150958;">security@zerta.io</a>.</p>
+                <p>You are responsible for maintaining the confidentiality of any login credentials associated with your account and for all activity that occurs under your account. Notify us immediately of any unauthorised use at <a href="mailto:info@zertahq.com" class="font-medium hover:underline" style="color:#150958;">info@zertahq.com</a>.</p>
             </div>
 
             <div>
@@ -67,7 +67,7 @@
 
             <div>
                 <h2 class="text-xl font-bold text-slate-900 mb-3">10. Contact</h2>
-                <p>Questions about these terms? Email <a href="mailto:legal@zerta.io" class="font-medium hover:underline" style="color:#150958;">legal@zerta.io</a>.</p>
+                <p>Questions about these terms? Email <a href="mailto:info@zertahq.com" class="font-medium hover:underline" style="color:#150958;">info@zertahq.com</a>.</p>
             </div>
 
         </div>

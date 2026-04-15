@@ -16,7 +16,7 @@
             </h1>
             <p class="text-lg text-slate-500 leading-relaxed">
                 Media enquiries? Reach us at
-                <a href="mailto:zertahq@gmail.com" class="font-semibold hover:underline" style="color:#150958;">zertahq@gmail.com</a>.
+                <a href="mailto:info@zertahq.com" class="font-semibold hover:underline" style="color:#150958;">info@zertahq.com</a>.
                 We typically respond within 4 hours on business days.
             </p>
         </div>

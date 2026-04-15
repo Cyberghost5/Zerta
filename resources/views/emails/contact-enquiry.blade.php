@@ -5,7 +5,7 @@
 <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
     <div style="background:#150958;padding:28px 32px;">
         <h1 style="color:#8dc63f;margin:0;font-size:20px;">New Contact Enquiry</h1>
-        <p style="color:#94a3b8;margin:6px 0 0;font-size:13px;">Received via zerta.io contact form</p>
+        <p style="color:#94a3b8;margin:6px 0 0;font-size:13px;">Received via zertahq.com contact form</p>
     </div>
     <div style="padding:32px;">
         <table style="width:100%;border-collapse:collapse;">
@@ -29,7 +29,7 @@
         </div>
     </div>
     <div style="padding:16px 32px;background:#f8fafc;border-top:1px solid #e2e8f0;text-align:center;">
-        <p style="margin:0;font-size:11px;color:#94a3b8;">Zerta Technology · zertahq@gmail.com</p>
+        <p style="margin:0;font-size:11px;color:#94a3b8;">Zerta Technology · info@zertahq.com</p>
     </div>
 </div>
 </body>

@@ -76,7 +76,7 @@
 
             <div>
                 <h2 class="text-xl font-bold text-slate-900 mb-3">7. Contact</h2>
-                <p>Questions? Email <a href="mailto:privacy@zerta.io" class="font-medium hover:underline" style="color:#150958;">privacy@zerta.io</a>.</p>
+                <p>Questions? Email <a href="mailto:info@zertahq.com" class="font-medium hover:underline" style="color:#150958;">info@zertahq.com</a>.</p>
             </div>
 
         </div>

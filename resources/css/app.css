@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* ── Scroll-reveal base state ─────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger helpers — applied via data-delay on each child */
+.reveal[data-delay="100"] { transition-delay: 0.10s; }
+.reveal[data-delay="200"] { transition-delay: 0.20s; }
+.reveal[data-delay="300"] { transition-delay: 0.30s; }
+.reveal[data-delay="400"] { transition-delay: 0.40s; }
+.reveal[data-delay="500"] { transition-delay: 0.50s; }
+
+/* ── Hero heading word-by-word fade-up ───────────────────── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.hero-line {
+    opacity: 0;
+    animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-line:nth-child(1) { animation-delay: 0.05s; }
+.hero-line:nth-child(2) { animation-delay: 0.18s; }
+.hero-line:nth-child(3) { animation-delay: 0.31s; }
+.hero-line:nth-child(4) { animation-delay: 0.44s; }
+
+/* ── Counter number roll-up ──────────────────────────────── */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.stat-number {
+    display: inline-block;
+    opacity: 0;
+}
+.stat-number.is-visible {
+    animation: countUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ── Underline slide on nav links ────────────────────────── */
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 12px;
+    right: 12px;
+    height: 1.5px;
+    background-color: #8dc63f;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* ── Image slide-in from right ───────────────────────────── */
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(32px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+.hero-image {
+    opacity: 0;
+    animation: slideInRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+/* ── Tech badge pop on hover ─────────────────────────────── */
+.tech-badge {
+    transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.tech-badge:hover {
+    transform: translateY(-2px);
+}

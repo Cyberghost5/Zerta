@@ -67,19 +67,13 @@
                 </div>
             </div>
 
-            {{-- Image --}}
-            <div class="hidden lg:block relative self-end hero-image" aria-hidden="true">
-                <div class="absolute inset-x-8 top-8 bottom-0 bg-slate-100 rounded-t-2xl"></div>
-                <div class="relative">
-                    <img
-                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&w=800&q=80"
-                        alt="Developers collaborating around a laptop"
-                        class="relative w-full rounded-t-2xl object-cover object-top"
-                        style="max-height: 500px;"
-                        loading="eager"
-                        width="800"
-                        height="500"
-                    >
+            {{-- Globe Animation --}}
+            <div class="flex relative self-center items-center justify-center hero-image mt-8 lg:mt-0" aria-hidden="true">
+                <div class="relative flex items-center justify-center w-full">
+                    {{-- Outer glow ring --}}
+                    <div class="absolute rounded-full pointer-events-none"
+                         style="width:100%;max-width:640px;aspect-ratio:1;background:radial-gradient(circle,rgba(141,198,63,0.09) 0%,transparent 68%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+                    <canvas id="globe-canvas" style="width:100%;max-width:520px;aspect-ratio:1;display:block;"></canvas>
                 </div>
             </div>
 
@@ -411,3 +405,270 @@
 </section>
 
 @endsection
+
+@push('scripts')
+<script>
+(function () {
+    'use strict';
+    var canvas = document.getElementById('globe-canvas');
+    if (!canvas) return;
+
+    var SIZE = canvas.offsetWidth || 480;
+    var DPR  = window.devicePixelRatio || 1;
+    canvas.width  = SIZE * DPR;
+    canvas.height = SIZE * DPR;
+    var ctx = canvas.getContext('2d');
+    ctx.scale(DPR, DPR);
+
+    var cx = SIZE / 2, cy = SIZE / 2;
+    var R         = Math.round(SIZE * 0.318);
+    var CARD_DIST = R * 1.30;
+    var AR        = SIZE < 400 ? 13 : 20;
+    var LFONT     = SIZE < 400 ?  7 :  9.5;
+    var DOT_R     = Math.max(1.5, SIZE * 0.0054);
+
+    /* ── simplified land detection ── */
+    function isLand(lat, lng) {
+        while (lng >  180) lng -= 360;
+        while (lng < -180) lng += 360;
+        if (lat > 24  && lat < 70  && lng > -130 && lng < -52)  return true; /* N America      */
+        if (lat > 14  && lat < 24  && lng > -118 && lng < -87)  return true; /* Mexico         */
+        if (lat > 7   && lat < 21  && lng > -92  && lng < -77)  return true; /* C America      */
+        if (lat > 64  && lat < 84  && lng > -57  && lng < -17)  return true; /* Greenland      */
+        if (lat > -5  && lat < 12  && lng > -80  && lng < -60)  return true; /* N S.America    */
+        if (lat > -35 && lat < -5  && lng > -76  && lng < -34)  return true; /* S.America      */
+        if (lat > -56 && lat < -35 && lng > -76  && lng < -64)  return true; /* S.Cone         */
+        if (lat > 35  && lat < 72  && lng > -11  && lng < 40)   return true; /* Europe         */
+        if (lat > 28  && lat < 38  && lng > -6   && lng < 37)   return true; /* N Africa       */
+        if (lat > -5  && lat < 28  && lng > -18  && lng < 52)   return true; /* W/C Africa     */
+        if (lat > -35 && lat < -5  && lng > 12   && lng < 40)   return true; /* S Africa       */
+        if (lat > -26 && lat < -12 && lng > 43   && lng < 51)   return true; /* Madagascar     */
+        if (lat > 12  && lat < 38  && lng > 34   && lng < 62)   return true; /* Middle East    */
+        if (lat > 48  && lat < 78  && lng > 30   && lng < 170)  return true; /* Russia         */
+        if (lat > 5   && lat < 38  && lng > 60   && lng < 100)  return true; /* S Asia         */
+        if (lat > -8  && lat < 38  && lng > 95   && lng < 145)  return true; /* SE/E Asia      */
+        if (lat > 30  && lat < 46  && lng > 129  && lng < 146)  return true; /* Japan          */
+        if (lat > -44 && lat < -10 && lng > 113  && lng < 154)  return true; /* Australia      */
+        if (lat > -47 && lat < -34 && lng > 166  && lng < 179)  return true; /* New Zealand    */
+        return false;
+    }
+
+    /* Pre-compute land dot positions */
+    var landDots = [];
+    var STEP = 4;
+    for (var la = -85; la <= 85; la += STEP) {
+        var cosL    = Math.max(0.12, Math.abs(Math.cos(la * Math.PI / 180)));
+        var lngStep = Math.min(Math.max(STEP / cosL, STEP), 18);
+        for (var lo = -180; lo < 180; lo += lngStep) {
+            if (isLand(la, lo)) landDots.push([la, lo]);
+        }
+    }
+
+    /* 10 devs spread ~45° apart in longitude so ≥2 are always visible */
+    var devs = [
+        { lat: 37.8,  lng: -122.4, role: 'React Developer',  initials: 'KM', color: '#8dc63f' }, /* San Francisco  */
+        { lat: 40.7,  lng:  -74.0, role: 'Node.js Engineer',  initials: 'LT', color: '#150958' }, /* New York       */
+        { lat: -23.5, lng:  -46.6, role: 'Python Developer',  initials: 'CF', color: '#150958' }, /* São Paulo      */
+        { lat: 51.5,  lng:   -0.1, role: 'Java Engineer',     initials: 'JW', color: '#8dc63f' }, /* London         */
+        { lat:  6.5,  lng:    3.4, role: 'Frontend Dev',      initials: 'AO', color: '#150958' }, /* Lagos          */
+        { lat: -1.3,  lng:   36.8, role: 'Angular Developer', initials: 'WK', color: '#8dc63f' }, /* Nairobi        */
+        { lat: 25.2,  lng:   55.3, role: '.NET Developer',    initials: 'SA', color: '#150958' }, /* Dubai          */
+        { lat: 19.1,  lng:   72.9, role: 'Flutter Developer', initials: 'AR', color: '#8dc63f' }, /* Mumbai         */
+        { lat:  1.4,  lng:  103.8, role: 'DevOps Engineer',   initials: 'HL', color: '#150958' }, /* Singapore      */
+        { lat: 37.6,  lng:  126.9, role: 'Vue.js Developer',  initials: 'YT', color: '#8dc63f' }, /* Seoul          */
+    ];
+
+    var rotation = 0.12; /* start with Atlantic facing */
+
+    function toRad(d) { return d * Math.PI / 180; }
+
+    function project(lat, lng) {
+        var phi = toRad(90 - lat);
+        var th  = toRad(lng) + rotation;
+        var sp  = Math.sin(phi);
+        return {
+            x: cx + R * sp * Math.cos(th),
+            y: cy - R * Math.cos(phi),
+            z:      R * sp * Math.sin(th)
+        };
+    }
+
+    /* Rounded-rect path helper (no ctx.roundRect needed) */
+    function rRect(x, y, w, h, r) {
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.lineTo(x + w - r, y);
+        ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+        ctx.lineTo(x + w, y + h - r);
+        ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+        ctx.lineTo(x + r, y + h);
+        ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+        ctx.lineTo(x, y + r);
+        ctx.quadraticCurveTo(x, y, x + r, y);
+        ctx.closePath();
+    }
+
+    function drawFrame() {
+        ctx.clearRect(0, 0, SIZE, SIZE);
+
+        /* ── Ocean sphere (very light, almost white) ── */
+        var ocean = ctx.createRadialGradient(cx - R * 0.18, cy - R * 0.18, R * 0.06, cx, cy, R);
+        ocean.addColorStop(0,    '#f4fbff');
+        ocean.addColorStop(0.55, '#e6f4fd');
+        ocean.addColorStop(1,    '#cce6f9');
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, Math.PI * 2);
+        ctx.fillStyle = ocean;
+        ctx.fill();
+
+        /* ── Land dots (clipped to sphere) ── */
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, R - 0.5, 0, Math.PI * 2);
+        ctx.clip();
+
+        for (var i = 0; i < landDots.length; i++) {
+            var p = project(landDots[i][0], landDots[i][1]);
+            if (p.z < 0) continue;
+            var depth = p.z / R; /* 0..1 */
+
+            /* Alternate brand green / dark brand-green by grid cell */
+            var chk = ((landDots[i][0] / 4 | 0) + (landDots[i][1] / 4 | 0)) & 1;
+            /* Brand green: #8dc63f = rgb(141,198,63)  Dark variant: rgb(98,138,44) */
+            var dotColor = chk === 0
+                ? 'rgba(141,198,63,' + (0.55 + 0.45 * depth) + ')'
+                : 'rgba(98,138,44,'  + (0.50 + 0.50 * depth) + ')';
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2.7, 0, Math.PI * 2);
+            ctx.fillStyle = dotColor;
+            ctx.fill();
+        }
+        ctx.restore();
+
+        /* ── Sphere rim ── */
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(141,198,63,0.22)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        /* ── Highlight sheen ── */
+        var sh = ctx.createRadialGradient(cx - R * 0.38, cy - R * 0.35, R * 0.03, cx, cy, R);
+        sh.addColorStop(0,    'rgba(255,255,255,0.32)');
+        sh.addColorStop(0.45, 'rgba(255,255,255,0.06)');
+        sh.addColorStop(1,    'rgba(0,0,60,0.04)');
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, Math.PI * 2);
+        ctx.fillStyle = sh;
+        ctx.fill();
+
+        /* ── Developer hub dots + cards ── */
+        var now = performance.now() / 1000;
+
+        /* Collect all front-facing devs, sort deepest-first; show cards for top 3 */
+        var visible = [];
+        for (var j = 0; j < devs.length; j++) {
+            var hp = project(devs[j].lat, devs[j].lng);
+            if (hp.z > 5) visible.push({ dev: devs[j], hp: hp });
+        }
+        visible.sort(function (a, b) { return b.hp.z - a.hp.z; });
+
+        /* ── Draw hub dots for every visible dev ── */
+        for (var k = 0; k < visible.length; k++) {
+            var v     = visible[k];
+            var hpk   = v.hp;
+            var pulse = 0.5 + 0.5 * Math.sin(now * 2.4 + k * 1.1);
+            var fade  = Math.min(1, (hpk.z - 5) / (R * 0.3));
+
+            ctx.beginPath();
+            ctx.arc(hpk.x, hpk.y, DOT_R * 1.2 + 5 * pulse, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(141,198,63,' + (0.40 * (1 - pulse) * fade) + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(hpk.x, hpk.y, DOT_R * 1.6, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(21,9,88,' + fade + ')';
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(hpk.x, hpk.y, DOT_R * 0.72, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(141,198,63,' + fade + ')';
+            ctx.fill();
+        }
+
+        /* ── Draw cards for top 3 (always at least 2 since devs span all longitudes) ── */
+        var cardCount = Math.min(3, visible.length);
+        for (var m = 0; m < cardCount; m++) {
+            var vc   = visible[m];
+            var hpc  = vc.hp;
+            var dev  = vc.dev;
+            var fade2 = Math.min(1, (hpc.z - 5) / (R * 0.3));
+
+            /* Radial card position – naturally avoids overlap */
+            var dir   = Math.atan2(hpc.y - cy, hpc.x - cx);
+            var cardX = cx + Math.cos(dir) * CARD_DIST;
+            var cardY = cy + Math.sin(dir) * CARD_DIST;
+
+            /* ── Curved connecting line ── */
+            ctx.save();
+            ctx.globalAlpha = 0.60 * fade2;
+            ctx.beginPath();
+            ctx.moveTo(hpc.x, hpc.y);
+            var ddx = cardX - hpc.x, ddy = cardY - hpc.y;
+            var mx  = (hpc.x + cardX) / 2;
+            var my  = (hpc.y + cardY) / 2;
+            ctx.quadraticCurveTo(mx - ddy * 0.18, my + ddx * 0.18, cardX, cardY);
+            ctx.strokeStyle = 'rgba(21,9,88,0.65)';
+            ctx.lineWidth   = 1.2;
+            ctx.stroke();
+            ctx.restore();
+
+            /* ── Avatar ── */
+            ctx.globalAlpha = fade2;
+
+            ctx.beginPath();
+            ctx.arc(cardX, cardY, AR + 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(cardX, cardY, AR, 0, Math.PI * 2);
+            ctx.fillStyle = dev.color;
+            ctx.fill();
+
+            ctx.fillStyle    = '#ffffff';
+            ctx.font         = 'bold ' + Math.round(AR * 0.53) + 'px Inter,system-ui,sans-serif';
+            ctx.textAlign    = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(dev.initials, cardX, cardY);
+
+            /* ── Role label pill ── */
+            ctx.font = LFONT + 'px Inter,system-ui,sans-serif';
+            var lw  = ctx.measureText(dev.role).width + 12;
+            var lh  = LFONT + 7;
+            var lx  = cardX - lw / 2;
+            var ly  = cardY + AR + 4;
+
+            rRect(lx, ly, lw, lh, 4);
+            ctx.fillStyle   = 'rgba(255,255,255,0.97)';
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(0,0,0,0.09)';
+            ctx.lineWidth   = 0.8;
+            ctx.stroke();
+
+            ctx.fillStyle    = 'rgba(21,9,88,0.88)';
+            ctx.textBaseline = 'top';
+            ctx.fillText(dev.role, cardX, ly + 3);
+
+            ctx.globalAlpha = 1;
+        }
+
+        rotation += 0.003;
+        requestAnimationFrame(drawFrame);
+    }
+
+    drawFrame();
+})();
+</script>
+@endpush

@@ -11,7 +11,7 @@
 
             {{-- Logo --}}
             <a href="{{ url('/') }}" class="flex items-center shrink-0" aria-label="Zerta — Home">
-                <img src="{{ asset('assets/image/logo.svg') }}" alt="Zerta" class="h-8 w-auto" width="128" height="32">
+                <img src="{{ asset('images/og-cover.jpg') }}" alt="Zerta" class="h-8 w-auto" width="128" height="32">
             </a>
 
             {{-- Desktop Navigation --}}

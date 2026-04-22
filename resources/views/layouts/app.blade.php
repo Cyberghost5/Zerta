@@ -23,6 +23,10 @@
 
     <link rel="canonical" href="{{ url()->current() }}">
 
+    {{-- Favicon --}}
+    <link rel="icon" href="{{ asset('images/favicon.svg') }}" type="image/svg+xml">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.svg') }}" type="image/svg+xml">
+
     <title>@yield('title', 'Zerta — Hire Senior Remote Developers')</title>
 
     {{-- Preconnect for faster Google Fonts loading --}}

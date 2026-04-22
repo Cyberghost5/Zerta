@@ -230,15 +230,15 @@
 
         <div x-data="{ open: null }" class="divide-y divide-slate-100 border border-slate-100 rounded-2xl overflow-hidden">
             @foreach ($faqs as $i => $faq)
-            <div x-data>
+            <div>
                 <button
-                    @click="$root.open = ($root.open === {{ $i }}) ? null : {{ $i }}"
+                    @click="open = (open === {{ $i }}) ? null : {{ $i }}"
                     class="w-full flex items-center justify-between text-left px-6 py-5 hover:bg-slate-50 transition-colors duration-150 gap-4"
-                    :aria-expanded="($root.open === {{ $i }}).toString()"
+                    :aria-expanded="(open === {{ $i }}).toString()"
                 >
                     <span class="font-semibold text-slate-900 text-sm">{{ $faq['q'] }}</span>
                     <svg
-                        :class="$root.open === {{ $i }} ? 'rotate-180' : ''"
+                        :class="open === {{ $i }} ? 'rotate-180' : ''"
                         class="w-4 h-4 shrink-0 text-slate-400 transition-transform duration-200"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
                     >
@@ -246,7 +246,7 @@
                     </svg>
                 </button>
                 <div
-                    x-show="$root.open === {{ $i }}"
+                    x-show="open === {{ $i }}"
                     x-cloak
                     x-transition:enter="transition ease-out duration-150"
                     x-transition:enter-start="opacity-0 -translate-y-1"

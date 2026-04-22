@@ -35,7 +35,7 @@
     @stack('head')
 
     {{-- SiteLock trust seal --}}
-    <a href="#" onclick="window.open('https://www.sitelock.com/verify.php?site=zertahq.com','SiteLock','width=600,height=600,left=160,top=170');"><img class="img-fluid" alt="SiteLock" title="SiteLock" src="https://shield.sitelock.com/shield/zertahq.com" /></a>
+    <!-- <a href="#" onclick="window.open('https://www.sitelock.com/verify.php?site=zertahq.com','SiteLock','width=600,height=600,left=160,top=170');"><img class="img-fluid" alt="SiteLock" title="SiteLock" src="https://shield.sitelock.com/shield/zertahq.com" /></a> -->
 </head>
 <body class="font-sans antialiased bg-white text-slate-800">
 

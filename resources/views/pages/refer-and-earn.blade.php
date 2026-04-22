@@ -23,9 +23,7 @@
                     Earn up to <strong class="text-slate-800">10% commission</strong> when you refer a client to us.
                 </p>
                 <a
-                    href="https://forms.gle/XgPvQ9PPkisw4mjX8"
-                    target="_blank"
-                    rel="noopener"
+                    href="{{ route('contact') }}"
                     class="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-lg transition-colors duration-150 text-sm bg-[#150958] hover:bg-[#0e0640]"
                 >
                     Join the Program
@@ -92,7 +90,7 @@
                         'num'  => '01',
                         'title'=> 'Complete the form',
                         'desc' => 'Get on-boarded into the referral program by first completing the registration form.',
-                        'link' => ['href' => 'https://forms.gle/XgPvQ9PPkisw4mjX8', 'label' => 'Fill the form →'],
+                        'link' => ['href' => route('contact'), 'label' => 'Fill the form →'],
                     ],
                     [
                         'num'  => '02',
@@ -225,7 +223,7 @@
             [
                 'q' => 'How do I start?',
                 'a' => 'Fill the referral program form to get started. Once your entry is reviewed, we will reach out with the next steps.',
-                'cta' => ['href' => 'https://forms.gle/XgPvQ9PPkisw4mjX8', 'label' => 'Fill the form →'],
+                'cta' => ['href' => route('contact'), 'label' => 'Fill the form →'],
             ],
         ];
         @endphp
@@ -281,9 +279,7 @@
             Join our referral program today. It's free, it's flexible, and it works from anywhere in the world.
         </p>
         <a
-            href="https://forms.gle/XgPvQ9PPkisw4mjX8"
-            target="_blank"
-            rel="noopener"
+            href="{{ route('contact') }}"
             class="inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-lg transition-colors duration-150 text-sm text-[#150958] bg-white hover:bg-slate-100"
         >
             Join the Referral Program

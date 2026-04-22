@@ -76,6 +76,7 @@
                             <option value="dedicated_teams">Dedicated Teams</option>
                             <option value="talent_outsourcing">Talent Outsourcing</option>
                             <option value="it_consulting">IT Consulting</option>
+                            <option value="refer_and_earn">Refer &amp; Earn</option>
                             <option value="other">Not sure — let's talk</option>
                         </select>
                     </div>
@@ -118,8 +119,8 @@
                     <h3 class="font-bold text-slate-900 mb-4">Our offices</h3>
                     <div class="space-y-6 text-sm text-slate-500">
                         <div>
-                            <p class="font-semibold text-slate-800 mb-1">Lagos (HQ)</p>
-                            <p>14 Karimu Kotun Street<br>Victoria Island, Lagos</p>
+                            <p class="font-semibold text-slate-800 mb-1">Jos (HQ)</p>
+                            <p>57 Rayfield Rd, Fwavei<br>Jos 930103, Plateau</p>
                         </div>
                     </div>
                 </div>

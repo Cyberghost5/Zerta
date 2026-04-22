@@ -40,7 +40,7 @@
                 <div class="relative w-full max-w-lg">
                     <div class="absolute inset-0 rounded-3xl opacity-10 blur-3xl" style="background:#8dc63f;"></div>
                     <img
-                        src="https://digikraaft.com/front/images/refer.jpg"
+                        src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1170"
                         alt="Refer and Earn illustration"
                         class="relative w-full rounded-3xl shadow-2xl object-cover"
                     >

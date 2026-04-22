@@ -597,8 +597,8 @@
             ctx.fill();
         }
 
-        /* ── Draw cards for top 3 (always at least 2 since devs span all longitudes) ── */
-        var cardCount = Math.min(3, visible.length);
+        /* ── Draw cards for top 7 (5-7 always visible since devs span all longitudes) ── */
+        var cardCount = Math.min(7, visible.length);
         for (var m = 0; m < cardCount; m++) {
             var vc   = visible[m];
             var hpc  = vc.hp;

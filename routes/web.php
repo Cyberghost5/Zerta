@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Route;
 
 // Public pages
 Route::get('/', fn() => view('home'))->name('home');
-Route::get('/about',   fn() => view('pages.about'))->name('about');
-Route::get('/blog',    fn() => view('pages.blog'))->name('blog');
-Route::get('/press',   fn() => view('pages.press'))->name('press');
+Route::get('/about',           fn() => view('pages.about'))->name('about');
+Route::get('/blog',            fn() => view('pages.blog'))->name('blog');
+Route::get('/press',           fn() => view('pages.press'))->name('press');
+Route::get('/refer-and-earn',  fn() => view('pages.refer-and-earn'))->name('refer');
 Route::get('/privacy', fn() => view('pages.privacy'))->name('privacy');
 Route::get('/terms',   fn() => view('pages.terms'))->name('terms');
 Route::get('/cookies', fn() => view('pages.cookies'))->name('cookies');

@@ -50,6 +50,7 @@
                 <ul class="space-y-3 text-sm">
                     <li><a href="{{ route('about') }}"   class="hover:text-white transition-colors duration-200">About Us</a></li>
                     <li><a href="{{ route('careers') }}" class="hover:text-white transition-colors duration-200">Careers</a></li>
+                    <li><a href="{{ route('refer') }}"   class="hover:text-white transition-colors duration-200">Refer &amp; Earn</a></li>
                     <li><a href="{{ route('blog') }}"    class="hover:text-white transition-colors duration-200">Blog</a></li>
                     <li><a href="{{ route('press') }}"   class="hover:text-white transition-colors duration-200">Press</a></li>
                     <li><a href="{{ route('contact') }}" class="hover:text-white transition-colors duration-200">Contact</a></li>
@@ -77,7 +78,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
-                        <span>Lagos, Nigeria &amp; Remote</span>
+                        <span>57 Rayfield Rd, Fwavei, Jos 930103, Plateau</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-[#8dc63f] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

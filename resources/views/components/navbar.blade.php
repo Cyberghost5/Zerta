@@ -86,6 +86,16 @@
                    class="nav-link px-4 py-2 rounded-lg text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 font-medium transition-all duration-150"
                 >Blog</a>
 
+                {{-- Careers --}}
+                <a href="{{ route('careers') }}"
+                   class="nav-link px-4 py-2 rounded-lg text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 font-medium transition-all duration-150"
+                >Careers</a>
+
+                {{-- Refer & Earn --}}
+                <a href="{{ route('refer') }}"
+                   class="nav-link px-4 py-2 rounded-lg text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 font-medium transition-all duration-150"
+                >Refer &amp; Earn</a>
+
                 {{-- Contact --}}
                 <a href="{{ route('contact') }}"
                    class="nav-link px-4 py-2 rounded-lg text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 font-medium transition-all duration-150"
@@ -158,6 +168,10 @@
                    class="px-3 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm font-medium transition-colors">About</a>
                 <a @click="open = false" href="{{ route('blog') }}"
                    class="px-3 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm font-medium transition-colors">Blog</a>
+                <a @click="open = false" href="{{ route('careers') }}"
+                   class="px-3 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm font-medium transition-colors">Careers</a>
+                <a @click="open = false" href="{{ route('refer') }}"
+                   class="px-3 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm font-medium transition-colors">Refer &amp; Earn</a>
                 <a @click="open = false" href="{{ route('contact') }}"
                    class="px-3 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm font-medium transition-colors">Contact</a>
 

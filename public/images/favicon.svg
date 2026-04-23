@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#8dc63f"/>
-  <text x="16" y="23" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#ffffff">Z</text>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><style>.cls-1{fill:#150958;}.cls-2{fill:#8dc63f;}</style></defs><path class="cls-1" d="M429.92,402.91v22.46a53.07,53.07,0,0,1-53.08,53.08H121.58A53.07,53.07,0,0,1,68.5,425.37V387.28a53.13,53.13,0,0,1,10.65-31.9l90.39-120.22c26.3-35,1.34-85-42.43-85h0A53.08,53.08,0,0,1,74,97.09V74.63a53.08,53.08,0,0,1,53.09-53.08H369A53.07,53.07,0,0,1,422,74.63v37.15a53,53,0,0,1-10.82,32.11L319.47,264.63c-26.55,34.95-1.63,85.2,42.27,85.2h15.1A53.07,53.07,0,0,1,429.92,402.91Z"/><circle class="cls-1" cx="67.95" cy="250" r="23.46"/><circle class="cls-2" cx="432.05" cy="250" r="23.46"/></svg>

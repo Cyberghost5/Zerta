@@ -464,19 +464,27 @@
         }
     }
 
-    /* 10 devs spread ~45° apart in longitude so ≥2 are always visible */
+    /* 10 people spread ~45° apart in longitude so ≥2 are always visible */
     var devs = [
-        { lat: 37.8,  lng: -122.4, role: 'React Developer',  initials: 'KM', color: '#8dc63f' }, /* San Francisco  */
-        { lat: 40.7,  lng:  -74.0, role: 'Node.js Engineer',  initials: 'LT', color: '#150958' }, /* New York       */
-        { lat: -23.5, lng:  -46.6, role: 'Python Developer',  initials: 'CF', color: '#150958' }, /* São Paulo      */
-        { lat: 51.5,  lng:   -0.1, role: 'Java Engineer',     initials: 'JW', color: '#8dc63f' }, /* London         */
-        { lat:  6.5,  lng:    3.4, role: 'Frontend Dev',      initials: 'AO', color: '#150958' }, /* Lagos          */
-        { lat: -1.3,  lng:   36.8, role: 'Angular Developer', initials: 'WK', color: '#8dc63f' }, /* Nairobi        */
-        { lat: 25.2,  lng:   55.3, role: '.NET Developer',    initials: 'SA', color: '#150958' }, /* Dubai          */
-        { lat: 19.1,  lng:   72.9, role: 'Flutter Developer', initials: 'AR', color: '#8dc63f' }, /* Mumbai         */
-        { lat:  1.4,  lng:  103.8, role: 'DevOps Engineer',   initials: 'HL', color: '#150958' }, /* Singapore      */
-        { lat: 37.6,  lng:  126.9, role: 'Vue.js Developer',  initials: 'YT', color: '#8dc63f' }, /* Seoul          */
+        { lat: 37.8,  lng: -122.4, role: 'Product Manager',        initials: 'KM', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=47' }, /* San Francisco  */
+        { lat: 40.7,  lng:  -74.0, role: 'Social Media Manager',   initials: 'LT', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=12' }, /* New York       */
+        { lat: -23.5, lng:  -46.6, role: 'Customer Support Agent', initials: 'CF', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=5'  }, /* São Paulo      */
+        { lat: 51.5,  lng:   -0.1, role: 'UX Designer',            initials: 'JW', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=68' }, /* London         */
+        { lat:  6.5,  lng:    3.4, role: 'React Developer',        initials: 'AO', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=32' }, /* Lagos          */
+        { lat: -1.3,  lng:   36.8, role: 'Marketing Manager',      initials: 'WK', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=33' }, /* Nairobi        */
+        { lat: 25.2,  lng:   55.3, role: 'Customer Success Mgr',   initials: 'SA', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=9'  }, /* Dubai          */
+        { lat: 19.1,  lng:   72.9, role: 'Project Manager',        initials: 'AR', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=51' }, /* Mumbai         */
+        { lat:  1.4,  lng:  103.8, role: 'Data Analyst',           initials: 'HL', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=25' }, /* Singapore      */
+        { lat: 37.6,  lng:  126.9, role: 'DevOps Engineer',        initials: 'YT', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=15' }, /* Seoul          */
     ];
+
+    /* Pre-load all avatar face images */
+    devs.forEach(function(d) {
+        var img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.src = d.imgSrc;
+        d._img = img;
+    });
 
     var rotation = 0.12; /* start with Atlantic facing */
 
@@ -627,21 +635,29 @@
             /* ── Avatar ── */
             ctx.globalAlpha = fade2;
 
+            /* White ring border */
             ctx.beginPath();
             ctx.arc(cardX, cardY, AR + 2.5, 0, Math.PI * 2);
             ctx.fillStyle = '#ffffff';
             ctx.fill();
 
+            /* Face photo inside circular clip */
+            ctx.save();
             ctx.beginPath();
             ctx.arc(cardX, cardY, AR, 0, Math.PI * 2);
-            ctx.fillStyle = dev.color;
-            ctx.fill();
-
-            ctx.fillStyle    = '#ffffff';
-            ctx.font         = 'bold ' + Math.round(AR * 0.53) + 'px Inter,system-ui,sans-serif';
-            ctx.textAlign    = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(dev.initials, cardX, cardY);
+            ctx.clip();
+            if (dev._img && dev._img.complete && dev._img.naturalWidth > 0) {
+                ctx.drawImage(dev._img, cardX - AR, cardY - AR, AR * 2, AR * 2);
+            } else {
+                ctx.fillStyle = dev.color;
+                ctx.fill();
+                ctx.fillStyle    = '#ffffff';
+                ctx.font         = 'bold ' + Math.round(AR * 0.53) + 'px Inter,system-ui,sans-serif';
+                ctx.textAlign    = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(dev.initials, cardX, cardY);
+            }
+            ctx.restore();
 
             /* ── Role label pill ── */
             ctx.font = LFONT + 'px Inter,system-ui,sans-serif';

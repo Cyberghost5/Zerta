@@ -661,8 +661,8 @@
 
             /* ── Role label pill ── */
             ctx.font = LFONT + 'px Inter,system-ui,sans-serif';
-            var lw  = ctx.measureText(dev.role).width + 12;
-            var lh  = LFONT + 7;
+            var lw  = ctx.measureText(dev.role).width + 16;
+            var lh  = LFONT + 8;
             var lx  = cardX - lw / 2;
             var ly  = cardY + AR + 4;
 
@@ -674,8 +674,9 @@
             ctx.stroke();
 
             ctx.fillStyle    = 'rgba(21,9,88,0.88)';
-            ctx.textBaseline = 'top';
-            ctx.fillText(dev.role, cardX, ly + 3);
+            ctx.textAlign    = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(dev.role, cardX, ly + lh / 2);
 
             ctx.globalAlpha = 1;
         }

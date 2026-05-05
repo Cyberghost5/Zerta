@@ -1,9 +1,43 @@
 ﻿@extends('layouts.app')
 
-@section('title', 'Careers at Zerta - Join Our Team')
-@section('description', 'Join the team building the future of software outsourcing. Open roles across engineering, product, design, sales, and operations.')
+@section('title', 'Careers at Zerta — Remote Jobs in Engineering, Design, Marketing & More')
+@section('description', 'Join Zerta\'s remote-first team. Open roles across engineering, design, product, marketing, customer success, sales, operations, and finance. Apply today.')
+@section('keywords', 'remote jobs, remote engineering jobs, product manager jobs, UX designer jobs, marketing jobs, customer success jobs, software company careers, Zerta jobs, hire remote talent')
 
 @section('content')
+
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Open Roles at Zerta",
+  "itemListElement": [
+    @foreach($jobs->flatten() as $i => $job)
+    {
+      "@type": "ListItem",
+      "position": {{ $i + 1 }},
+      "item": {
+        "@type": "JobPosting",
+        "title": "{{ addslashes($job->title) }}",
+        "description": "Join Zerta as a {{ addslashes($job->title) }}. Remote-first, {{ $job->type }} role.",
+        "datePosted": "{{ $job->created_at->toDateString() }}",
+        "employmentType": "{{ strtoupper(str_replace('-', '_', $job->type)) }}",
+        "jobLocationType": "TELECOMMUTE",
+        "applicantLocationRequirements": { "@type": "Country", "name": "Worldwide" },
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Zerta",
+          "sameAs": "https://zertahq.com",
+          "logo": "https://zertahq.com/images/og-cover.jpg"
+        }
+      }
+    }{{ !$loop->last ? ',' : '' }}
+    @endforeach
+  ]
+}
+</script>
+@endpush
 
 {{-- PAGE HERO --}}
 <section class="bg-white pt-32 pb-20 lg:pt-40 lg:pb-28">
@@ -98,7 +132,7 @@
 
             <div class="divide-y divide-slate-100">
             @foreach ($deptJobs as $ri => $role)
-            @php $roleId = $deptType . '_' . $ri; @endphp
+            @php $roleId = 'role_' . $role->id; @endphp
             <div>
 
                 {{-- Role header --}}
@@ -278,6 +312,83 @@
                             </div>
                             @endif
 
+                            {{-- Marketing extra fields --}}
+                            @if ($deptType === 'marketing')
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Years of marketing experience *</label>
+                                    <select name="years_experience" required class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                                        <option value="" disabled selected>Select...</option>
+                                        <option>1-2 years</option><option>3-5 years</option><option>6-9 years</option><option>10+ years</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Channels you specialise in *</label>
+                                    <input type="text" name="design_tools" required placeholder="e.g. SEO, Paid Social, Email, Content"
+                                        class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Portfolio or campaign example URL <span class="text-slate-400 font-normal">(optional)</span></label>
+                                <input type="url" name="portfolio" placeholder="https://..."
+                                    class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                            </div>
+                            @endif
+
+                            {{-- Customer Success extra fields --}}
+                            @if ($deptType === 'customer_success')
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Years of CS / support experience *</label>
+                                    <select name="years_experience" required class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                                        <option value="" disabled selected>Select...</option>
+                                        <option>1-2 years</option><option>3-5 years</option><option>6-9 years</option><option>10+ years</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">CRM / helpdesk tools you use *</label>
+                                    <input type="text" name="methodologies" required placeholder="e.g. Intercom, Zendesk, HubSpot"
+                                        class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                                </div>
+                            </div>
+                            @endif
+
+                            {{-- People & Operations extra fields --}}
+                            @if ($deptType === 'operations')
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Years of experience *</label>
+                                    <select name="years_experience" required class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                                        <option value="" disabled selected>Select...</option>
+                                        <option>1-2 years</option><option>3-5 years</option><option>6-9 years</option><option>10+ years</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">HRIS / tools you have used *</label>
+                                    <input type="text" name="methodologies" required placeholder="e.g. BambooHR, Workday, Greenhouse"
+                                        class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                                </div>
+                            </div>
+                            @endif
+
+                            {{-- Finance extra fields --}}
+                            @if ($deptType === 'finance')
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Years of finance experience *</label>
+                                    <select name="years_experience" required class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                                        <option value="" disabled selected>Select...</option>
+                                        <option>1-2 years</option><option>3-5 years</option><option>6-9 years</option><option>10+ years</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Accounting software you use *</label>
+                                    <input type="text" name="methodologies" required placeholder="e.g. QuickBooks, Xero, NetSuite"
+                                        class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
+                                </div>
+                            </div>
+                            @endif
+
                             {{-- CV Upload --}}
                             <div>
                                 <label class="block text-xs font-semibold text-slate-700 mb-1.5">CV / Resume * <span class="text-slate-400 font-normal">PDF or DOCX, max 5 MB</span></label>
@@ -334,7 +445,7 @@
                 </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-4 lg:justify-end">
-                <a href="mailto:info@zertahq.com?subject=Open Application"
+                <a href="mailto:careers@zertahq.com?subject=Open Application"
                     class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-50 transition-colors duration-150 text-sm">
                     Send an open application
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>

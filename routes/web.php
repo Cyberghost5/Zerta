@@ -26,6 +26,24 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/careers',        [CareerController::class, 'index'])->name('careers');
 Route::post('/careers/apply', [CareerController::class, 'store'])->name('careers.apply');
 
+// Sitemap
+Route::get('/sitemap.xml', function () {
+    $pages = [
+        ['url' => url('/'),               'changefreq' => 'weekly',  'priority' => '1.0'],
+        ['url' => url('/about'),          'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['url' => url('/blog'),           'changefreq' => 'weekly',  'priority' => '0.7'],
+        ['url' => url('/careers'),        'changefreq' => 'weekly',  'priority' => '0.8'],
+        ['url' => url('/contact'),        'changefreq' => 'monthly', 'priority' => '0.7'],
+        ['url' => url('/refer-and-earn'), 'changefreq' => 'monthly', 'priority' => '0.6'],
+        ['url' => url('/press'),          'changefreq' => 'monthly', 'priority' => '0.5'],
+        ['url' => url('/privacy'),        'changefreq' => 'yearly',  'priority' => '0.3'],
+        ['url' => url('/terms'),          'changefreq' => 'yearly',  'priority' => '0.3'],
+        ['url' => url('/cookies'),        'changefreq' => 'yearly',  'priority' => '0.3'],
+    ];
+    return response(view('sitemap', compact('pages')), 200)
+        ->header('Content-Type', 'application/xml');
+})->name('sitemap');
+
 // Admin - login (unauthenticated)
 Route::get('/admin/login',  [AdminController::class, 'loginForm'])->name('admin.login');
 Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.post');

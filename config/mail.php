@@ -115,6 +115,7 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Zerta Technology'),
     ],
 
-    'to_address' => env('MAIL_TO_ADDRESS', 'info@zertahq.com'),
+    'to_address'     => env('MAIL_TO_ADDRESS',    'info@zertahq.com'),
+    'careers_address' => env('MAIL_CAREERS_ADDRESS', 'careers@zertahq.com'),
 
 ];

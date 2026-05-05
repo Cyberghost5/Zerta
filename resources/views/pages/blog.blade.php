@@ -2,6 +2,7 @@
 
 @section('title', 'Blog - Insights on Software Outsourcing & Engineering')
 @section('description', 'Practical articles on software outsourcing, remote team management, engineering leadership, and building products that ship on time.')
+@section('keywords', 'software outsourcing blog, remote team management, engineering leadership, tech articles, software development insights, startup engineering')
 
 @section('content')
 

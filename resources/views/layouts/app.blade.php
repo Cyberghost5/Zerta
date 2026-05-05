@@ -13,13 +13,14 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', 'Zerta - Hire Senior Remote Developers')">
     <meta property="og:description" content="@yield('description', 'Zerta connects growing companies with senior remote engineers for staff augmentation, dedicated teams, and software outsourcing.')">
-    <meta property="og:image" content="@yield('og_image', asset('images/og-cover.jpg'))">
+    <meta property="og:image" content="@yield('og_image', asset('images/logo.svg'))">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@zerta">
     <meta name="twitter:title" content="@yield('title', 'Zerta - Hire Senior Remote Developers')">
     <meta name="twitter:description" content="@yield('description', 'Zerta connects growing companies with senior remote engineers.')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/logo.svg'))">
 
     <link rel="canonical" href="{{ url()->current() }}">
 

@@ -65,7 +65,7 @@ class CareerController extends Controller
         ]);
 
         try {
-            Mail::to(config('mail.to_address'))->send(new ApplicationReceived($application));
+            Mail::to(config('mail.careers_address'))->send(new ApplicationReceived($application));
         } catch (\Exception $e) {
             logger()->error('Application mail failed: ' . $e->getMessage());
         }

@@ -1,7 +1,25 @@
 @extends('layouts.app')
 
 @section('title', 'About Zerta Technology - Who We Are')
-@section('description', 'Zerta Technology is a Software Development and Talent Outsourcing company founded in 2022 in Lagos, Nigeria. We help businesses turn ideas into powerful, scalable digital products.')
+@section('description', 'Zerta is a software development and talent outsourcing company based in Lagos. We help businesses build scalable products with senior remote engineers.')
+@section('keywords', 'about Zerta, Zerta Technology, software outsourcing company, Lagos tech company, remote engineering team, dedicated developers')
+
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Zerta Technology",
+  "url": "{{ url('/about') }}",
+  "description": "Zerta is a software development and talent outsourcing company based in Lagos, founded in 2022.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zerta",
+    "url": "{{ url('/') }}"
+  }
+}
+</script>
+@endpush
 
 @section('content')
 

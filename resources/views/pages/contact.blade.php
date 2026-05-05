@@ -2,6 +2,19 @@
 
 @section('title', 'Contact Zerta - Start a Project or Hire Developers')
 @section('description', 'Get in touch with Zerta. Tell us about your project or team needs and we\'ll respond within one business day.')
+@section('keywords', 'contact Zerta, hire developers, start a software project, get a quote, software outsourcing inquiry, remote team inquiry')
+
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Zerta",
+  "url": "{{ url('/contact') }}",
+  "description": "Get in touch with Zerta to start a project or hire a dedicated engineering team."
+}
+</script>
+@endpush
 
 @section('content')
 

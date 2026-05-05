@@ -4,6 +4,26 @@
 @section('description', 'Zerta delivers end-to-end software projects and embeds senior engineers into your team. From MVP to full-scale products - scoped, built, and shipped on time.')
 @section('keywords', 'software outsourcing, project delivery, dedicated development teams, staff augmentation, remote engineers, MVP development, PHP, React, Laravel, Node.js')
 
+@push('head')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zerta",
+  "url": "{{ url('/') }}",
+  "logo": "{{ asset('images/logo.svg') }}",
+  "description": "Zerta delivers end-to-end software projects and embeds senior engineers into your team.",
+  "email": "info@zertahq.com",
+  "foundingDate": "2022",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lagos",
+    "addressCountry": "NG"
+  }
+}
+</script>
+@endpush
+
 @section('content')
 
 {{-- ============================================================

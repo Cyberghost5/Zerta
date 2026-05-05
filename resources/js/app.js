@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Stat number observer — add is-visible with staggered delays
+    // Stat number observer - add is-visible with staggered delays
     const statObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

@@ -26,7 +26,7 @@
     transform: translateY(0);
 }
 
-/* Stagger helpers — applied via data-delay on each child */
+/* Stagger helpers - applied via data-delay on each child */
 .reveal[data-delay="100"] { transition-delay: 0.10s; }
 .reveal[data-delay="200"] { transition-delay: 0.20s; }
 .reveal[data-delay="300"] { transition-delay: 0.30s; }

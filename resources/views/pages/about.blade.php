@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About Zerta Technology — Who We Are')
+@section('title', 'About Zerta Technology - Who We Are')
 @section('description', 'Zerta Technology is a Software Development and Talent Outsourcing company founded in 2022 in Lagos, Nigeria. We help businesses turn ideas into powerful, scalable digital products.')
 
 @section('content')
@@ -11,11 +11,11 @@
         <div class="max-w-3xl">
             <p class="text-sm font-semibold tracking-wide mb-4" style="color:#8dc63f;">Who we are</p>
             <h1 class="text-5xl sm:text-6xl font-black text-slate-900 leading-[1.06] tracking-tight mb-6">
-                We don't just build software —<br>
+                We don't just build software -<br>
                 <span class="text-slate-400">we deliver outcomes.</span>
             </h1>
             <p class="text-lg text-slate-500 leading-relaxed max-w-xl">
-                Zerta Technology is a forward-thinking Software Development and Talent Outsourcing company founded in 2022 in Lagos, Nigeria. Our mission is simple: help businesses turn ideas into powerful, scalable digital products — without the usual friction, delays, or inflated costs.
+                Zerta Technology is a forward-thinking Software Development and Talent Outsourcing company founded in 2022 in Lagos, Nigeria. Our mission is simple: help businesses turn ideas into powerful, scalable digital products - without the usual friction, delays, or inflated costs.
             </p>
             <p class="text-lg text-slate-500 leading-relaxed max-w-xl mt-4">
                 We exist for founders, startups, and organisations who want more than promises. They want working products.
@@ -34,15 +34,15 @@
                     At Zerta, execution is everything.
                 </h2>
                 <p class="text-slate-500 leading-relaxed mb-4">
-                    Hand us a brief — and we deliver working software. From early-stage MVPs to full-scale production systems, our team takes complete ownership of the delivery process from start to finish.
+                    Hand us a brief - and we deliver working software. From early-stage MVPs to full-scale production systems, our team takes complete ownership of the delivery process from start to finish.
                 </p>
                 <p class="text-slate-500 leading-relaxed mb-8">We combine product thinking, engineering excellence, and top-tier outsourced talent to build solutions that actually work in the real world.</p>
             </div>
             <div class="grid grid-cols-2 gap-6">
                 @foreach ([
-                    ['icon' => 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', 'title' => 'Product thinking', 'desc' => 'We approach every brief as product owners — understanding goals before writing a single line of code.'],
+                    ['icon' => 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', 'title' => 'Product thinking', 'desc' => 'We approach every brief as product owners - understanding goals before writing a single line of code.'],
                     ['icon' => 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', 'title' => 'Engineering excellence', 'desc' => 'Senior engineers across every modern stack, delivering clean, maintainable, production-ready code.'],
-                    ['icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', 'title' => 'Top-tier talent', 'desc' => 'Our outsourced talent network means you always get the right people — matched to your project and culture.'],
+                    ['icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', 'title' => 'Top-tier talent', 'desc' => 'Our outsourced talent network means you always get the right people - matched to your project and culture.'],
                     ['icon' => 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', 'title' => 'Real-world results', 'desc' => 'From MVP to production, we own delivery end-to-end and don\'t stop until the product ships.'],
                 ] as $v)
                 <div class="bg-white rounded-2xl p-6 border border-slate-100">
@@ -79,12 +79,12 @@
                 [
                     'icon'  => 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
                     'title' => 'Transparent Process',
-                    'desc'  => 'Regular demos, clearly defined milestones, and full visibility into progress. No black boxes, no surprises — just a clear view of where things stand at every stage.'
+                    'desc'  => 'Regular demos, clearly defined milestones, and full visibility into progress. No black boxes, no surprises - just a clear view of where things stand at every stage.'
                 ],
                 [
                     'icon'  => 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
                     'title' => 'Predictable Pricing',
-                    'desc'  => 'No hidden fees. No surprises. Just clear, agreed costs from the start — so you can plan with confidence and stay in control of your budget.'
+                    'desc'  => 'No hidden fees. No surprises. Just clear, agreed costs from the start - so you can plan with confidence and stay in control of your budget.'
                 ],
             ] as $item)
             <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">

@@ -18,7 +18,7 @@ class ApplicationReceived extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Application — ' . $this->application->role . ' (' . $this->application->name . ')',
+            subject: 'New Application - ' . $this->application->role . ' (' . $this->application->name . ')',
             replyTo: [$this->application->email],
         );
     }

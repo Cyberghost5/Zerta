@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blog — Insights on Software Outsourcing & Engineering')
+@section('title', 'Blog - Insights on Software Outsourcing & Engineering')
 @section('description', 'Practical articles on software outsourcing, remote team management, engineering leadership, and building products that ship on time.')
 
 @section('content')
@@ -30,7 +30,7 @@
             [
                 'category' => 'Software Outsourcing',
                 'title'    => 'How to write a software brief that actually gets you what you want',
-                'excerpt'  => 'Most project briefs fail before the first line of code is written. Here\'s how to scope a project so any agency or team can run with it — and you get back working software instead of surprises.',
+                'excerpt'  => 'Most project briefs fail before the first line of code is written. Here\'s how to scope a project so any agency or team can run with it - and you get back working software instead of surprises.',
                 'date'     => 'Apr 10, 2026',
                 'readtime' => '6 min read',
                 'img'      => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&w=800&q=80',
@@ -48,7 +48,7 @@
             [
                 'category' => 'Engineering',
                 'title'    => 'Fixed-price vs. time & materials: which model is right for your project?',
-                'excerpt'  => 'Both models work. Both can go wrong. The choice depends on how well you know what you want — and we\'ll help you figure that out.',
+                'excerpt'  => 'Both models work. Both can go wrong. The choice depends on how well you know what you want - and we\'ll help you figure that out.',
                 'date'     => 'Mar 26, 2026',
                 'readtime' => '5 min read',
                 'img'      => 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&w=600&q=80',

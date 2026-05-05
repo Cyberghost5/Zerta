@@ -26,11 +26,11 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/careers',        [CareerController::class, 'index'])->name('careers');
 Route::post('/careers/apply', [CareerController::class, 'store'])->name('careers.apply');
 
-// Admin — login (unauthenticated)
+// Admin - login (unauthenticated)
 Route::get('/admin/login',  [AdminController::class, 'loginForm'])->name('admin.login');
 Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.post');
 
-// Admin — authenticated
+// Admin - authenticated
 Route::prefix('admin')->middleware('admin.auth')->group(function () {
     Route::get('/',        [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');

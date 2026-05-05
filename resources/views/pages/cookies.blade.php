@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Cookie Policy — Zerta')
+@section('title', 'Cookie Policy - Zerta')
 @section('description', 'How Zerta uses cookies and similar technologies on its website.')
 
 @section('content')

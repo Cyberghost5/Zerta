@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Terms of Service — Zerta')
+@section('title', 'Terms of Service - Zerta')
 @section('description', 'Terms governing use of Zerta\'s website and services.')
 
 @section('content')
@@ -31,7 +31,7 @@
 
             <div>
                 <h2 class="text-xl font-bold text-slate-900 mb-3">4. Intellectual property</h2>
-                <p>All content on this website — including text, graphics, logos, and code — is the property of Zerta Inc. or its content suppliers and is protected by applicable intellectual property laws. Work product created under a project agreement is governed by the IP terms in that agreement.</p>
+                <p>All content on this website - including text, graphics, logos, and code - is the property of Zerta Inc. or its content suppliers and is protected by applicable intellectual property laws. Work product created under a project agreement is governed by the IP terms in that agreement.</p>
             </div>
 
             <div>

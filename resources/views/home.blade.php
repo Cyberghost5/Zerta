@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Zerta — Software Outsourcing & Dedicated Engineering Teams')
-@section('description', 'Zerta delivers end-to-end software projects and embeds senior engineers into your team. From MVP to full-scale products — scoped, built, and shipped on time.')
+@section('title', 'Zerta - Software Outsourcing & Dedicated Engineering Teams')
+@section('description', 'Zerta delivers end-to-end software projects and embeds senior engineers into your team. From MVP to full-scale products - scoped, built, and shipped on time.')
 @section('keywords', 'software outsourcing, project delivery, dedicated development teams, staff augmentation, remote engineers, MVP development, PHP, React, Laravel, Node.js')
 
 @section('content')
@@ -19,7 +19,7 @@
 
             {{-- Text --}}
             <div class="pb-16 lg:pb-24">
-                <p class="hero-line text-sm font-semibold tracking-wide mb-5" style="color:#8dc63f;">Software outsourcing — done right</p>
+                <p class="hero-line text-sm font-semibold tracking-wide mb-5" style="color:#8dc63f;">Software outsourcing - done right</p>
 
                 <h1 id="hero-heading" class="text-5xl sm:text-6xl font-black text-slate-900 leading-[1.06] tracking-tight mb-6">
                     <span class="hero-line block">We build your</span>
@@ -29,7 +29,7 @@
                 </h1>
 
                 <p class="hero-line text-lg text-slate-500 leading-relaxed mb-10 max-w-md">
-                    Zerta delivers end-to-end software projects and embeds senior engineers into your team — scoped clearly, built in sprints, and shipped on time.
+                    Zerta delivers end-to-end software projects and embeds senior engineers into your team - scoped clearly, built in sprints, and shipped on time.
                 </p>
 
                 <div class="flex flex-wrap gap-3">
@@ -115,13 +115,13 @@
                         [
                             'num'   => '01',
                             'title' => 'Staff Augmentation',
-                            'desc'  => 'You run the work — we supply the people. We embed senior developers directly into your existing team. They use your tools, join your standups, and report to you. Scale up or down as the project demands.',
+                            'desc'  => 'You run the work - we supply the people. We embed senior developers directly into your existing team. They use your tools, join your standups, and report to you. Scale up or down as the project demands.',
                             'tags'  => ['Quick to start', 'You stay in control', 'Flexible scale'],
                         ],
                         [
                             'num'   => '02',
                             'title' => 'Dedicated Teams',
-                            'desc'  => 'Need more than one hire? We build you a complete engineering unit — frontend, backend, QA, and a tech lead — focused exclusively on your product. We handle HR, tooling, and retention.',
+                            'desc'  => 'Need more than one hire? We build you a complete engineering unit - frontend, backend, QA, and a tech lead - focused exclusively on your product. We handle HR, tooling, and retention.',
                             'tags'  => ['Full team', 'Long-term', 'We handle HR'],
                         ],
                         [
@@ -210,7 +210,7 @@
         $steps = [
             [
                 'label' => 'Discovery call',
-                'desc'  => 'A focused 30-minute session where we learn your product goals, technical landscape, timeline, and success criteria — no generic intake forms.',
+                'desc'  => 'A focused 30-minute session where we learn your product goals, technical landscape, timeline, and success criteria - no generic intake forms.',
             ],
             [
                 'label' => 'Scope & proposal',
@@ -222,7 +222,7 @@
             ],
             [
                 'label' => 'Launch & support',
-                'desc'  => 'We deploy to production, run QA, and hand over full documentation. Post-launch support is included — because shipping is only half the job.',
+                'desc'  => 'We deploy to production, run QA, and hand over full documentation. Post-launch support is included - because shipping is only half the job.',
             ],
         ];
         @endphp
@@ -324,7 +324,7 @@
             <div class="reveal bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col justify-between" data-delay="150">
                 <blockquote>
                     <p class="text-slate-700 leading-relaxed text-sm">
-                        "I was skeptical after two bad experiences with other agencies. Zerta is different — they match on working style, not just a skill checklist. Our dedicated team has been together 18 months and operates like a close-knit in-office group."
+                        "I was skeptical after two bad experiences with other agencies. Zerta is different - they match on working style, not just a skill checklist. Our dedicated team has been together 18 months and operates like a close-knit in-office group."
                     </p>
                 </blockquote>
                 <div class="flex items-center gap-3 mt-6 pt-6 border-t border-slate-200">
@@ -345,7 +345,7 @@
             <div class="reveal bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col justify-between" data-delay="300">
                 <blockquote>
                     <p class="text-slate-700 leading-relaxed text-sm">
-                        "We outsourced our entire mobile rewrite — React Native, new design system, three third-party integrations. Shipped on time, within the quoted budget. I've referred two other founders since."
+                        "We outsourced our entire mobile rewrite - React Native, new design system, three third-party integrations. Shipped on time, within the quoted budget. I've referred two other founders since."
                     </p>
                 </blockquote>
                 <div class="flex items-center gap-3 mt-6 pt-6 border-t border-slate-200">
@@ -378,7 +378,7 @@
                     Ready to ship?<br>Let's scope it.
                 </h2>
                 <p class="reveal text-slate-300 text-lg leading-relaxed max-w-md" data-delay="150">
-                    Book a free 30-minute discovery call. We'll map out your project and give you a clear scope and budget — no obligation.
+                    Book a free 30-minute discovery call. We'll map out your project and give you a clear scope and budget - no obligation.
                 </p>
             </div>
 
@@ -466,16 +466,16 @@
 
     /* 10 people spread ~45° apart in longitude so ≥2 are always visible */
     var devs = [
-        { lat: 37.8,  lng: -122.4, role: 'Product Manager',        initials: 'KM', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=47' }, /* San Francisco  */
-        { lat: 40.7,  lng:  -74.0, role: 'Social Media Manager',   initials: 'LT', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=12' }, /* New York       */
-        { lat: -23.5, lng:  -46.6, role: 'Customer Support Agent', initials: 'CF', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=5'  }, /* São Paulo      */
-        { lat: 51.5,  lng:   -0.1, role: 'UX Designer',            initials: 'JW', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=68' }, /* London         */
-        { lat:  6.5,  lng:    3.4, role: 'React Developer',        initials: 'AO', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=32' }, /* Lagos          */
-        { lat: -1.3,  lng:   36.8, role: 'Marketing Manager',      initials: 'WK', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=33' }, /* Nairobi        */
-        { lat: 25.2,  lng:   55.3, role: 'Customer Success Mgr',   initials: 'SA', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=9'  }, /* Dubai          */
-        { lat: 19.1,  lng:   72.9, role: 'Project Manager',        initials: 'AR', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=51' }, /* Mumbai         */
-        { lat:  1.4,  lng:  103.8, role: 'Data Analyst',           initials: 'HL', color: '#150958', imgSrc: 'https://i.pravatar.cc/100?img=25' }, /* Singapore      */
-        { lat: 37.6,  lng:  126.9, role: 'DevOps Engineer',        initials: 'YT', color: '#8dc63f', imgSrc: 'https://i.pravatar.cc/100?img=15' }, /* Seoul          */
+        { lat: 37.8,  lng: -122.4, role: 'Product Manager',        initials: 'KM', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=KM&size=100'  }, /* San Francisco  */
+        { lat: 40.7,  lng:  -74.0, role: 'Social Media Manager',   initials: 'LT', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=LT&size=100'  }, /* New York       */
+        { lat: -23.5, lng:  -46.6, role: 'Customer Support Agent', initials: 'CF', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=CF&size=100'  }, /* São Paulo      */
+        { lat: 51.5,  lng:   -0.1, role: 'UX Designer',            initials: 'JW', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=JW&size=100'  }, /* London         */
+        { lat:  6.5,  lng:    3.4, role: 'React Developer',        initials: 'AO', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=AO&size=100'  }, /* Lagos          */
+        { lat: -1.3,  lng:   36.8, role: 'Marketing Manager',      initials: 'WK', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=WK&size=100'  }, /* Nairobi        */
+        { lat: 25.2,  lng:   55.3, role: 'Customer Success Mgr',   initials: 'SA', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=SA&size=100'  }, /* Dubai          */
+        { lat: 19.1,  lng:   72.9, role: 'Project Manager',        initials: 'AR', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=AR&size=100'  }, /* Mumbai         */
+        { lat:  1.4,  lng:  103.8, role: 'Data Analyst',           initials: 'HL', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=HL&size=100'  }, /* Singapore      */
+        { lat: 37.6,  lng:  126.9, role: 'DevOps Engineer',        initials: 'YT', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=YT&size=100'  }, /* Seoul          */
     ];
 
     /* Pre-load all avatar face images */

@@ -1,5 +1,5 @@
 <header
-    x-data="{ open: false, scrolled: false, solutions: false }"
+    x-data="{ open: false, scrolled: false, solutions: false, products: false }"
     @scroll.window="scrolled = window.scrollY > 40"
     @keydown.escape.window="solutions = false; open = false"
     :class="scrolled ? 'shadow-sm shadow-slate-200/80' : ''"
@@ -10,7 +10,7 @@
         <div class="flex items-center justify-between h-16 lg:h-18">
 
             {{-- Logo --}}
-            <a href="{{ url('/') }}" class="flex items-center shrink-0" aria-label="Zerta — Home">
+            <a href="{{ url('/') }}" class="flex items-center shrink-0" aria-label="Zerta - Home">
                 <img src="{{ asset('assets/image/logo.svg') }}" alt="Zerta" class="h-8 w-auto" width="128" height="32">
             </a>
 
@@ -73,6 +73,61 @@
                             </div>
                         </div>
                         @endforeach
+                    </div>
+                </div>
+
+                {{-- Products dropdown --}}
+                <div class="relative" x-data @click.outside="products = false">
+                    <button
+                        @click="products = !products"
+                        :aria-expanded="products.toString()"
+                        class="nav-link inline-flex items-center gap-1 px-4 py-2 rounded-lg text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 font-medium transition-all duration-150"
+                    >
+                        Products
+                        <svg :class="products ? 'rotate-180' : ''"
+                             class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"
+                             fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+
+                    <div
+                        x-show="products"
+                        x-cloak
+                        x-transition:enter="transition ease-out duration-150"
+                        x-transition:enter-start="opacity-0 translate-y-1"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-100"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 translate-y-1"
+                        class="absolute left-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-100 py-2 z-50"
+                        role="menu"
+                    >
+                        {{-- Joblio --}}
+                        <div class="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 cursor-default" role="menuitem">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background-color:#150958;">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">Joblio</p>
+                                <p class="text-xs text-slate-500">ATS &amp; HIRS system</p>
+                            </div>
+                        </div>
+
+                        {{-- Identra --}}
+                        <div class="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 cursor-default" role="menuitem">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background-color:#8dc63f;">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">Identra</p>
+                                <p class="text-xs text-slate-500">Identity management system</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -161,6 +216,31 @@
                         @foreach (['Staff Augmentation','Dedicated Teams','Software Outsourcing','Talent Outsourcing','IT Consulting','Product Development'] as $sol)
                         <div class="px-3 py-2 text-sm text-slate-500 cursor-default rounded-lg hover:bg-slate-50">{{ $sol }}</div>
                         @endforeach
+                    </div>
+                </div>
+
+                {{-- Products accordion for mobile --}}
+                <div x-data="{ mProducts: false }">
+                    <button
+                        @click="mProducts = !mProducts"
+                        class="w-full flex items-center justify-between px-3 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm font-medium transition-colors"
+                    >
+                        Products
+                        <svg :class="mProducts ? 'rotate-180' : ''"
+                             class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"
+                             fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="mProducts" x-cloak class="pl-4 pb-1 space-y-0.5">
+                        <div class="px-3 py-2 text-sm text-slate-500 cursor-default rounded-lg hover:bg-slate-50">
+                            <span class="font-medium text-slate-700">Joblio</span>
+                            <span class="block text-xs">ATS &amp; HIRS system</span>
+                        </div>
+                        <div class="px-3 py-2 text-sm text-slate-500 cursor-default rounded-lg hover:bg-slate-50">
+                            <span class="font-medium text-slate-700">Identra</span>
+                            <span class="block text-xs">Identity management system</span>
+                        </div>
                     </div>
                 </div>
 

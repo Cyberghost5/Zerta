@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Privacy Policy — Zerta')
+@section('title', 'Privacy Policy - Zerta')
 @section('description', 'How Zerta collects, uses, and protects your personal data.')
 
 @section('content')

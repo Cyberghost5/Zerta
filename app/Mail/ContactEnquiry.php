@@ -18,7 +18,7 @@ class ContactEnquiry extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Contact Enquiry — ' . $this->submission->full_name,
+            subject: 'New Contact Enquiry - ' . $this->submission->full_name,
             replyTo: [$this->submission->email],
         );
     }

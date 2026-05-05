@@ -11,14 +11,14 @@
     {{-- Open Graph --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('title', 'Zerta — Hire Senior Remote Developers')">
+    <meta property="og:title" content="@yield('title', 'Zerta - Hire Senior Remote Developers')">
     <meta property="og:description" content="@yield('description', 'Zerta connects growing companies with senior remote engineers for staff augmentation, dedicated teams, and software outsourcing.')">
     <meta property="og:image" content="@yield('og_image', asset('images/og-cover.jpg'))">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@zerta">
-    <meta name="twitter:title" content="@yield('title', 'Zerta — Hire Senior Remote Developers')">
+    <meta name="twitter:title" content="@yield('title', 'Zerta - Hire Senior Remote Developers')">
     <meta name="twitter:description" content="@yield('description', 'Zerta connects growing companies with senior remote engineers.')">
 
     <link rel="canonical" href="{{ url()->current() }}">
@@ -27,7 +27,7 @@
     <link rel="icon" href="{{ asset('images/favicon.svg') }}" type="image/svg+xml">
     <link rel="shortcut icon" href="{{ asset('images/favicon.svg') }}" type="image/svg+xml">
 
-    <title>@yield('title', 'Zerta — Hire Senior Remote Developers')</title>
+    <title>@yield('title', 'Zerta - Hire Senior Remote Developers')</title>
 
     {{-- Preconnect for faster Google Fonts loading --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

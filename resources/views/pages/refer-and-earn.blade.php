@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Refer & Earn — Earn up to 10% Commission | Zerta')
+@section('title', 'Refer & Earn - Earn up to 10% Commission | Zerta')
 @section('description', 'Refer a client to Zerta and earn up to 10% commission on every successful deal. Join our referral program today.')
 @section('keywords', 'refer and earn, referral program, commission, earn money, Zerta referral')
 
@@ -101,7 +101,7 @@
                     [
                         'num'  => '03',
                         'title'=> 'Refer clients',
-                        'desc' => 'Refer your friends, family or anyone that needs our services — web &amp; mobile development, cloud, API integrations, and more.',
+                        'desc' => 'Refer your friends, family or anyone that needs our services - web &amp; mobile development, cloud, API integrations, and more.',
                         'link' => null,
                     ],
                     [
@@ -190,14 +190,14 @@
         $faqs = [
             [
                 'q' => 'How does the referral program work?',
-                'a' => 'Just refer any client to us who needs any of our services — Web and Mobile App Development, Website management, Cloud infrastructure setup, API integration — we build it and you get paid. We pay you up to 10% of the development fee.',
+                'a' => 'Just refer any client to us who needs any of our services - Web and Mobile App Development, Website management, Cloud infrastructure setup, API integration - we build it and you get paid. We pay you up to 10% of the development fee.',
             ],
             [
                 'q' => 'Who is eligible for this program?',
                 'a' => 'Everyone is eligible. Whether you are an individual, a business, or a professional, you can join and start earning referral commissions.',
             ],
             [
-                'q' => 'I\'m not in Nigeria — how do I join the referral program?',
+                'q' => 'I\'m not in Nigeria - how do I join the referral program?',
                 'a' => 'Irrespective of your location, you can be part of the program. To join, just mail us at <a href="mailto:info@zertahq.com" class="font-semibold underline" style="color:#150958;">info@zertahq.com</a> or fill the registration form.',
             ],
             [
@@ -217,7 +217,7 @@
                 'a' => 'No. Due to the usual Non-Disclosure Agreements (NDAs) between clients and developers in this line of business, referrers are not involved in the development process.',
             ],
             [
-                'q' => 'No one prays for disputes — but what if it happens?',
+                'q' => 'No one prays for disputes - but what if it happens?',
                 'a' => 'Any dispute arising between the parties in relation to this agreement shall be amicably settled within seven (7) working days. Where the parties are unable to resolve within seven working days, such matter shall be referred to arbitration in accordance with the applicable laws.',
             ],
             [

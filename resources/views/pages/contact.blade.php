@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Zerta — Start a Project or Hire Developers')
+@section('title', 'Contact Zerta - Start a Project or Hire Developers')
 @section('description', 'Get in touch with Zerta. Tell us about your project or team needs and we\'ll respond within one business day.')
 
 @section('content')
@@ -77,7 +77,7 @@
                             <option value="talent_outsourcing">Talent Outsourcing</option>
                             <option value="it_consulting">IT Consulting</option>
                             <option value="refer_and_earn">Refer &amp; Earn</option>
-                            <option value="other">Not sure — let's talk</option>
+                            <option value="other">Not sure - let's talk</option>
                         </select>
                     </div>
                     <div>

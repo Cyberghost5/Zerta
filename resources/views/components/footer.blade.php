@@ -11,7 +11,7 @@
                     </div>
                 </a>
                 <p class="text-sm leading-relaxed mb-6 max-w-xs">
-                    We deliver software projects end-to-end and embed senior engineers into growing teams — scoped clearly, shipped on time.
+                    We deliver software projects end-to-end and embed senior engineers into growing teams - scoped clearly, shipped on time.
                 </p>
                 <div class="flex items-center gap-3">
                     <a href="http://linkedin.com/company/zertatechnology" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200">

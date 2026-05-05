@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Press — Zerta in the News')
+@section('title', 'Press - Zerta in the News')
 @section('description', 'Press releases, media coverage, and resources for journalists covering Zerta.')
 
 @section('content')
@@ -35,7 +35,7 @@
             ['pub' => 'Forbes',          'title' => 'The 10 outsourcing firms redefining how startups scale their engineering',    'date' => 'Feb 2026', 'url' => '#'],
             ['pub' => 'The Next Web',    'title' => 'Why more CTOs are choosing project outsourcing over full-time hires',         'date' => 'Jan 2026', 'url' => '#'],
             ['pub' => 'VentureBeat',     'title' => 'Zerta\'s talent model: a closer look at their 98% on-time delivery claim',   'date' => 'Dec 2025', 'url' => '#'],
-            ['pub' => 'Wired',           'title' => 'The rise of the outsourced product team — and what it means for work',       'date' => 'Nov 2025', 'url' => '#'],
+            ['pub' => 'Wired',           'title' => 'The rise of the outsourced product team - and what it means for work',       'date' => 'Nov 2025', 'url' => '#'],
             ['pub' => 'Business Insider','title' => 'Zerta reaches $50M ARR without a single VC dollar in its first decade',       'date' => 'Sep 2025', 'url' => '#'],
         ];
         @endphp
@@ -68,7 +68,7 @@
             @foreach ([
                 ['date' => 'March 2026',    'title' => 'Zerta closes $22M Series B led by Horizon Ventures'],
                 ['date' => 'January 2026',  'title' => 'Zerta expands into APAC with new offices in Singapore and Sydney'],
-                ['date' => 'October 2025',  'title' => 'Zerta launches the Project Delivery Guarantee — on time or your next sprint is free'],
+                ['date' => 'October 2025',  'title' => 'Zerta launches the Project Delivery Guarantee - on time or your next sprint is free'],
                 ['date' => 'June 2025',     'title' => 'Zerta surpasses 350 delivered projects across 30 industries'],
                 ['date' => 'February 2025', 'title' => 'Zerta partners with GitHub to offer co-pilot tooling to all dedicated teams'],
                 ['date' => 'September 2024','title' => 'Zerta recognised in the Gartner Magic Quadrant for IT Outsourcing Services'],
@@ -90,7 +90,7 @@
             <div>
                 <h2 class="text-3xl font-black text-slate-900 mb-4">Media kit</h2>
                 <p class="text-slate-500 leading-relaxed mb-8">
-                    Logos, brand guidelines, executive headshots, and company fact sheet — everything you need in one download.
+                    Logos, brand guidelines, executive headshots, and company fact sheet - everything you need in one download.
                 </p>
                 <a href="#" class="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-lg transition-colors duration-150 text-sm" style="background-color:#150958;" onmouseover="this.style.backgroundColor='#0e0640'" onmouseout="this.style.backgroundColor='#150958'">
                     Download media kit

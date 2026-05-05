@@ -7,8 +7,8 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
+  "@@context": "https://schema.org",
+  "@@type": "ContactPage",
   "name": "Contact Zerta",
   "url": "{{ url('/contact') }}",
   "description": "Get in touch with Zerta to start a project or hire a dedicated engineering team."

@@ -7,8 +7,8 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
+  "@@context": "https://schema.org",
+  "@@type": "Organization",
   "name": "Zerta",
   "url": "{{ url('/') }}",
   "logo": "{{ asset('images/logo.svg') }}",
@@ -16,7 +16,7 @@
   "email": "info@zertahq.com",
   "foundingDate": "2022",
   "address": {
-    "@type": "PostalAddress",
+    "@@type": "PostalAddress",
     "addressLocality": "Lagos",
     "addressCountry": "NG"
   }

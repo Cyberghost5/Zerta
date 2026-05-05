@@ -7,24 +7,24 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
+  "@@context": "https://schema.org",
+  "@@type": "ItemList",
   "name": "Open Roles at Zerta",
   "itemListElement": [
     @foreach($jobs->flatten() as $i => $job)
     {
-      "@type": "ListItem",
+      "@@type": "ListItem",
       "position": {{ $i + 1 }},
       "item": {
-        "@type": "JobPosting",
+        "@@type": "JobPosting",
         "title": "{{ addslashes($job->title) }}",
         "description": "Join Zerta as a {{ addslashes($job->title) }}. Remote-first, {{ $job->type }} role.",
         "datePosted": "{{ $job->created_at->toDateString() }}",
         "employmentType": "{{ strtoupper(str_replace('-', '_', $job->type)) }}",
         "jobLocationType": "TELECOMMUTE",
-        "applicantLocationRequirements": { "@type": "Country", "name": "Worldwide" },
+        "applicantLocationRequirements": { "@@type": "Country", "name": "Worldwide" },
         "hiringOrganization": {
-          "@type": "Organization",
+          "@@type": "Organization",
           "name": "Zerta",
           "sameAs": "https://zertahq.com",
           "logo": "https://zertahq.com/images/og-cover.jpg"

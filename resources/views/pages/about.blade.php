@@ -7,13 +7,13 @@
 @push('head')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
+  "@@context": "https://schema.org",
+  "@@type": "AboutPage",
   "name": "About Zerta Technology",
   "url": "{{ url('/about') }}",
   "description": "Zerta is a software development and talent outsourcing company based in Lagos, founded in 2022.",
   "publisher": {
-    "@type": "Organization",
+    "@@type": "Organization",
     "name": "Zerta",
     "url": "{{ url('/') }}"
   }

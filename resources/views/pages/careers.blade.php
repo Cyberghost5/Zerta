@@ -4,8 +4,6 @@
 @section('description', 'Join Zerta\'s remote-first team. Open roles across engineering, design, product, marketing, customer success, sales, operations, and finance. Apply today.')
 @section('keywords', 'remote jobs, remote engineering jobs, product manager jobs, UX designer jobs, marketing jobs, customer success jobs, software company careers, Zerta jobs, hire remote talent')
 
-@section('content')
-
 @push('head')
 <script type="application/ld+json">
 {
@@ -38,6 +36,8 @@
 }
 </script>
 @endpush
+
+@section('content')
 
 {{-- PAGE HERO --}}
 <section class="bg-white pt-32 pb-20 lg:pt-40 lg:pb-28">

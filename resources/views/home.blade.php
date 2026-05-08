@@ -54,7 +54,7 @@
 
                 <div class="flex flex-wrap gap-3">
                     <a
-                        href="#contact"
+                        href="contact"
                         class="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-lg transition-colors duration-150 text-sm bg-[#150958] hover:bg-[#0e0640]"
                     >
                         Start a project
@@ -63,7 +63,7 @@
                         </svg>
                     </a>
                     <a
-                        href="#contact"
+                        href="contact"
                         class="inline-flex items-center gap-2 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold px-7 py-3.5 rounded-lg transition-colors duration-150 text-sm"
                     >
                         Hire developers
@@ -118,7 +118,7 @@
                 <p class="reveal text-slate-500 leading-relaxed text-sm" data-delay="200">
                     Pick the model that fits your situation. Many clients start with one and switch as they grow.
                 </p>
-                <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 mt-8 hover:text-[#8dc63f] transition-colors duration-150 group">
+                <a href="contact" class="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 mt-8 hover:text-[#8dc63f] transition-colors duration-150 group">
                     Talk to our team
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -413,7 +413,7 @@
                     </svg>
                 </a>
                 <a
-                    href="#contact"
+                    href="contact"
                     class="inline-flex items-center justify-center border-2 border-white/30 hover:border-white/60 text-white font-bold px-8 py-4 rounded-xl transition-colors duration-150 text-sm"
                 >
                     Hire developers
@@ -486,17 +486,29 @@
 
     /* 10 people spread ~45° apart in longitude so ≥2 are always visible */
     var devs = [
-        { lat: 37.8,  lng: -122.4, role: 'Product Manager',        initials: 'KM', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=KM&size=100'  }, /* San Francisco  */
-        { lat: 40.7,  lng:  -74.0, role: 'Social Media Manager',   initials: 'LT', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=LT&size=100'  }, /* New York       */
-        { lat: -23.5, lng:  -46.6, role: 'Customer Support Agent', initials: 'CF', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=CF&size=100'  }, /* São Paulo      */
-        { lat: 51.5,  lng:   -0.1, role: 'UX Designer',            initials: 'JW', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=JW&size=100'  }, /* London         */
-        { lat:  6.5,  lng:    3.4, role: 'React Developer',        initials: 'AO', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=AO&size=100'  }, /* Lagos          */
-        { lat: -1.3,  lng:   36.8, role: 'Marketing Manager',      initials: 'WK', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=WK&size=100'  }, /* Nairobi        */
-        { lat: 25.2,  lng:   55.3, role: 'Customer Success Mgr',   initials: 'SA', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=SA&size=100'  }, /* Dubai          */
-        { lat: 19.1,  lng:   72.9, role: 'Project Manager',        initials: 'AR', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=AR&size=100'  }, /* Mumbai         */
-        { lat:  1.4,  lng:  103.8, role: 'Data Analyst',           initials: 'HL', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=HL&size=100'  }, /* Singapore      */
-        { lat: 37.6,  lng:  126.9, role: 'DevOps Engineer',        initials: 'YT', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=YT&size=100'  }, /* Seoul          */
+        { lat: 37.8,  lng: -122.4, role: 'Product Manager',        initials: 'KM', color: '#8dc63f', imgSrc: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }, /* San Francisco  */
+        { lat: 40.7,  lng:  -74.0, role: 'Social Media Manager',   initials: 'LT', color: '#150958', imgSrc: 'https://images.unsplash.com/photo-1654110455429-cf322b40a906?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }, /* New York       */
+        { lat: -23.5, lng:  -46.6, role: 'Customer Support Agent', initials: 'CF', color: '#150958', imgSrc: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  }, /* São Paulo      */
+        { lat: 51.5,  lng:   -0.1, role: 'UX Designer',            initials: 'JW', color: '#8dc63f', imgSrc: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }, /* London         */
+        { lat:  6.5,  lng:    3.4, role: 'React Developer',        initials: 'AO', color: '#150958', imgSrc: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }, /* Lagos          */
+        { lat: -1.3,  lng:   36.8, role: 'Marketing Manager',      initials: 'WK', color: '#8dc63f', imgSrc: 'https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }, /* Nairobi        */
+        { lat: 25.2,  lng:   55.3, role: 'Customer Success Mgr',   initials: 'SA', color: '#150958', imgSrc: 'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  }, /* Dubai          */
+        { lat: 19.1,  lng:   72.9, role: 'Project Manager',        initials: 'AR', color: '#8dc63f', imgSrc: 'https://images.unsplash.com/photo-1640951613773-54706e06851d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }, /* Mumbai         */
+        { lat:  1.4,  lng:  103.8, role: 'Data Analyst',           initials: 'HL', color: '#150958', imgSrc: 'https://images.unsplash.com/photo-1628157588553-5eeea00af15c?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }, /* Singapore      */
+        { lat: 37.6,  lng:  126.9, role: 'DevOps Engineer',        initials: 'YT', color: '#8dc63f', imgSrc: 'https://images.unsplash.com/photo-1622012070740-4f753ebb9bad?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }, /* Seoul          */
     ];
+    // var devs = [
+    //     { lat: 37.8,  lng: -122.4, role: 'Product Manager',        initials: 'KM', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=KM&size=100'  }, /* San Francisco  */
+    //     { lat: 40.7,  lng:  -74.0, role: 'Social Media Manager',   initials: 'LT', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=LT&size=100'  }, /* New York       */
+    //     { lat: -23.5, lng:  -46.6, role: 'Customer Support Agent', initials: 'CF', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=CF&size=100'  }, /* São Paulo      */
+    //     { lat: 51.5,  lng:   -0.1, role: 'UX Designer',            initials: 'JW', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=JW&size=100'  }, /* London         */
+    //     { lat:  6.5,  lng:    3.4, role: 'React Developer',        initials: 'AO', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=AO&size=100'  }, /* Lagos          */
+    //     { lat: -1.3,  lng:   36.8, role: 'Marketing Manager',      initials: 'WK', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=WK&size=100'  }, /* Nairobi        */
+    //     { lat: 25.2,  lng:   55.3, role: 'Customer Success Mgr',   initials: 'SA', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=SA&size=100'  }, /* Dubai          */
+    //     { lat: 19.1,  lng:   72.9, role: 'Project Manager',        initials: 'AR', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=AR&size=100'  }, /* Mumbai         */
+    //     { lat:  1.4,  lng:  103.8, role: 'Data Analyst',           initials: 'HL', color: '#150958', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=HL&size=100'  }, /* Singapore      */
+    //     { lat: 37.6,  lng:  126.9, role: 'DevOps Engineer',        initials: 'YT', color: '#8dc63f', imgSrc: 'https://api.dicebear.com/9.x/personas/png?seed=YT&size=100'  }, /* Seoul          */
+    // ];
 
     /* Pre-load all avatar face images */
     devs.forEach(function(d) {

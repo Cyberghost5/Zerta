@@ -1,6 +1,6 @@
 ﻿@extends('layouts.app')
 
-@section('title', 'Careers at Zerta — Remote Jobs in Engineering, Design, Marketing & More')
+@section('title', 'Careers at Zerta - Remote Jobs in Engineering, Design, Marketing & More')
 @section('description', 'Join Zerta\'s remote-first team. Open roles across engineering, design, product, marketing, customer success, sales, operations, and finance. Apply today.')
 @section('keywords', 'remote jobs, remote engineering jobs, product manager jobs, UX designer jobs, marketing jobs, customer success jobs, software company careers, Zerta jobs, hire remote talent')
 
@@ -116,6 +116,20 @@
         </div>
         @endif
 
+        @if($errors->any())
+        <div class="mb-10 rounded-2xl bg-red-50 border border-red-200 px-6 py-4 flex items-start gap-3">
+            <svg class="w-5 h-5 shrink-0 mt-0.5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div>
+                <p class="text-sm font-semibold text-red-800 mb-1">Please fix the following and resubmit:</p>
+                <ul class="text-sm text-red-700 list-disc list-inside space-y-0.5">
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        @endif
+
         @if($jobs->isEmpty())
         <div class="text-center py-16 text-slate-400">
             <p class="text-lg font-semibold mb-2">No open roles right now.</p>
@@ -125,8 +139,19 @@
 
         <div class="space-y-14">
         @foreach ($jobs as $deptName => $deptJobs)
-        @php $deptType = $deptJobs->first()->department_type; @endphp
-        <div x-data="{ openRole: null }">
+        @php
+            $deptType = $deptJobs->first()->department_type;
+            $openOnLoad = '';
+            if ($errors->any()) {
+                foreach ($deptJobs as $_r) {
+                    if (old('role') === $_r->title) {
+                        $openOnLoad = 'role_' . $_r->id;
+                        break;
+                    }
+                }
+            }
+        @endphp
+        <div x-data="{ openRole: '{{ $openOnLoad }}' }">
 
             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5 pb-3 border-b border-slate-100">{{ $deptName }}</h3>
 
@@ -185,12 +210,12 @@
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-700 mb-1.5">Full name *</label>
-                                    <input type="text" name="name" required autocomplete="name" placeholder="Jane Smith"
+                                    <input type="text" name="name" required autocomplete="name" placeholder="Jane Smith" value="{{ old('name') }}"
                                         class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-700 mb-1.5">Email address *</label>
-                                    <input type="email" name="email" required autocomplete="email" placeholder="jane@example.com"
+                                    <input type="email" name="email" required autocomplete="email" placeholder="jane@example.com" value="{{ old('email') }}"
                                         class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
                                 </div>
                             </div>
@@ -199,12 +224,12 @@
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-700 mb-1.5">Phone <span class="text-slate-400 font-normal">(optional)</span></label>
-                                    <input type="tel" name="phone" autocomplete="tel" placeholder="+234 701 345 3936"
+                                    <input type="tel" name="phone" autocomplete="tel" placeholder="+234 701 345 3936" value="{{ old('phone') }}"
                                         class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-700 mb-1.5">LinkedIn profile *</label>
-                                    <input type="url" name="linkedin" required placeholder="https://linkedin.com/in/..."
+                                    <input type="url" name="linkedin" required placeholder="https://linkedin.com/in/..." value="{{ old('linkedin') }}"
                                         class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition">
                                 </div>
                             </div>
@@ -401,7 +426,7 @@
                                 <label class="block text-xs font-semibold text-slate-700 mb-1.5">Why Zerta? *</label>
                                 <textarea name="cover_note" required rows="4"
                                     placeholder="Tell us why this role interests you and what you would bring to the team."
-                                    class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition resize-none"></textarea>
+                                    class="w-full border border-slate-200 bg-white rounded-lg px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f] focus:border-transparent transition resize-none">{{ old('cover_note') }}</textarea>
                             </div>
 
                             {{-- Submit row --}}

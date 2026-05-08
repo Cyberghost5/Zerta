@@ -25,16 +25,22 @@ class CareerController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        $validated = $request->validate([
-            'name'       => ['required', 'string', 'max:200'],
-            'email'      => ['required', 'email', 'max:254'],
-            'phone'      => ['nullable', 'string', 'max:50'],
-            'linkedin'   => ['required', 'url', 'max:500'],
-            'role'       => ['required', 'string', 'max:200'],
-            'department' => ['required', 'string', 'max:100'],
-            'cover_note' => ['required', 'string', 'min:20', 'max:3000'],
-            'cv'         => ['required', 'file', 'mimes:pdf,doc,docx', 'max:5120'],
-        ]);
+        try {
+            $validated = $request->validate([
+                'name'       => ['required', 'string', 'max:200'],
+                'email'      => ['required', 'email', 'max:254'],
+                'phone'      => ['nullable', 'string', 'max:50'],
+                'linkedin'   => ['required', 'url', 'max:500'],
+                'role'       => ['required', 'string', 'max:200'],
+                'department' => ['required', 'string', 'max:100'],
+                'cover_note' => ['required', 'string', 'min:10', 'max:3000'],
+                'cv'         => ['required', 'file', 'mimes:pdf,doc,docx', 'max:5120'],
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return redirect(route('careers') . '#apply')
+                ->withErrors($e->validator)
+                ->withInput();
+        }
 
         // Store CV
         $cvPath = $request->file('cv')->store('cvs', 'local');
@@ -70,7 +76,7 @@ class CareerController extends Controller
             logger()->error('Application mail failed: ' . $e->getMessage());
         }
 
-        return redirect()->route('careers')
+        return redirect(route('careers') . '#apply')
             ->with('success', "Thanks {$application->name}! Your application for \"{$application->role}\" has been received. We'll review it and be in touch within 3 business days.");
     }
 }
